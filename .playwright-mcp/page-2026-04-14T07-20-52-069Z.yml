@@ -1,0 +1,50 @@
+- generic [active] [ref=e1]:
+  - main [ref=e3]:
+    - main [ref=e139]:
+      - generic [ref=e141]:
+        - generic [ref=e142]: Leadcom
+        - button "Toggle Dark Mode" [ref=e143] [cursor=pointer]:
+          - img [ref=e145]
+      - generic [ref=e152]:
+        - generic [ref=e154]:
+          - generic [ref=e155]: Steg 2 av 6
+          - generic [ref=e156]: 33%
+        - generic [ref=e159]:
+          - heading "Hur många nya undersökningsbokningar per månad vill ni få in?" [level=2] [ref=e160]
+          - paragraph [ref=e161]: Tänk nya patienter som ännu inte har varit hos er tidigare.
+        - generic [ref=e162]:
+          - button "A 5–10 nya undersökningar / månad" [ref=e163] [cursor=pointer]:
+            - generic [ref=e164]: A
+            - generic [ref=e165]: 5–10 nya undersökningar / månad
+            - img [ref=e166]
+          - button "B 10–20 nya undersökningar / månad" [ref=e168] [cursor=pointer]:
+            - generic [ref=e169]: B
+            - generic [ref=e170]: 10–20 nya undersökningar / månad
+            - img [ref=e171]
+          - button "C 20–30 nya undersökningar / månad" [ref=e173] [cursor=pointer]:
+            - generic [ref=e174]: C
+            - generic [ref=e175]: 20–30 nya undersökningar / månad
+            - img [ref=e176]
+          - button "D 30+ nya undersökningar / månad" [ref=e178] [cursor=pointer]:
+            - generic [ref=e179]: D
+            - generic [ref=e180]: 30+ nya undersökningar / månad
+            - img [ref=e181]
+        - generic [ref=e184]:
+          - paragraph [ref=e185]: “Vi gick från sporadiska förfrågningar till ett jämnare inflöde av nya patientundersökningar varje månad.”
+          - generic [ref=e186]:
+            - generic [ref=e188]: KC
+            - generic [ref=e189]:
+              - paragraph [ref=e190]: Klinikchef, Stockholm
+              - paragraph [ref=e191]: Fler bokningar / månad
+        - generic [ref=e194]:
+          - img [ref=e195]
+          - generic [ref=e197]:
+            - paragraph [ref=e198]: GENOMSNITTLIGT PATIENTVÄRDE
+            - paragraph [ref=e199]: En ny undersökning kan leda till behandlingar värda 15 000–50 000 kr över tid. Rätt volym gör skillnad.
+        - button "Tillbaka" [ref=e201] [cursor=pointer]:
+          - img [ref=e202]
+          - text: Tillbaka
+      - paragraph [ref=e205]: Leadcom — Datadriven patientanskaffning för tandkliniker
+  - button "Open Next.js Dev Tools" [ref=e134] [cursor=pointer]:
+    - img [ref=e135]
+  - alert [ref=e138]

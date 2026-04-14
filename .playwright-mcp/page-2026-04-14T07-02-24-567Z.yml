@@ -1,0 +1,32 @@
+- generic [active] [ref=e1]:
+  - main [ref=e3]:
+    - main [ref=e299]:
+      - generic [ref=e301]:
+        - generic [ref=e302]: Leadcom
+        - button "Toggle Dark Mode" [ref=e303] [cursor=pointer]:
+          - img [ref=e305]
+      - generic [ref=e313]:
+        - generic [ref=e314]:
+          - img [ref=e316]
+          - heading "Tack för era svar" [level=1] [ref=e319]
+          - paragraph [ref=e320]: Baserat på era svar ser vi att Leadcom kan hjälpa er att skapa ett jämnare inflöde av nya patientundersökningar. Nästa steg är ett kort strategisamtal.
+          - generic [ref=e321]:
+            - button "Boka strategisamtal" [ref=e322] [cursor=pointer]:
+              - img [ref=e323]
+              - text: Boka strategisamtal
+              - img [ref=e325]
+            - button "Börja om" [ref=e327] [cursor=pointer]:
+              - img [ref=e328]
+              - text: Börja om
+        - generic [ref=e332]:
+          - img "Tannami Klinikk" [ref=e334]
+          - paragraph [ref=e336]:
+            - text: Tannami fikk
+            - strong [ref=e337]: 252 nye pasienter de første 3 månedene
+            - text: med Leadcom, og
+            - strong [ref=e338]: økte inntektene med ytterligere ca. 550 000 kr.
+          - img "Tannami Klinikk team" [ref=e340]
+      - paragraph [ref=e342]: Leadcom — Datadriven patientanskaffning för tandkliniker
+  - button "Open Next.js Dev Tools" [ref=e134] [cursor=pointer]:
+    - img [ref=e135]
+  - alert [ref=e138]

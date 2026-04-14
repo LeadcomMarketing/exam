@@ -1,0 +1,43 @@
+- generic [active] [ref=e1]:
+  - main [ref=e3]:
+    - main [ref=e139]:
+      - generic [ref=e141]:
+        - generic [ref=e142]: Leadcom
+        - button "Toggle Dark Mode" [ref=e143] [cursor=pointer]:
+          - img [ref=e145]
+      - generic [ref=e152]:
+        - generic [ref=e154]:
+          - generic [ref=e155]: Steg 5 av 6
+          - generic [ref=e156]: 83%
+        - generic [ref=e159]:
+          - heading "Hur snabbt följer ni vanligtvis upp nya förfrågningar?" [level=2] [ref=e248]
+          - paragraph [ref=e161]: Snabb uppföljning påverkar hur många bokningar som faktiskt blir av.
+        - generic [ref=e162]:
+          - button "A Inom 5–10 minuter" [ref=e249] [cursor=pointer]:
+            - generic [ref=e250]: A
+            - generic [ref=e251]: Inom 5–10 minuter
+            - img [ref=e252]
+          - button "B Samma dag" [ref=e254] [cursor=pointer]:
+            - generic [ref=e255]: B
+            - generic [ref=e256]: Samma dag
+            - img [ref=e257]
+          - button "C Nästa dag" [ref=e259] [cursor=pointer]:
+            - generic [ref=e260]: C
+            - generic [ref=e261]: Nästa dag
+            - img [ref=e262]
+          - button "D Oregelbundet / när vi hinner" [ref=e264] [cursor=pointer]:
+            - generic [ref=e265]: D
+            - generic [ref=e266]: Oregelbundet / när vi hinner
+            - img [ref=e267]
+        - generic [ref=e194]:
+          - img [ref=e195]
+          - generic [ref=e197]:
+            - paragraph [ref=e198]: SVARSTID = BOKNINGSGRAD
+            - paragraph [ref=e199]: Snabb uppföljning gör stor skillnad. Ju snabbare ni svarar på en ny förfrågan, desto större chans att den blir en bokad tid.
+        - button "Tillbaka" [ref=e201] [cursor=pointer]:
+          - img [ref=e202]
+          - text: Tillbaka
+      - paragraph [ref=e205]: Leadcom — Datadriven patientanskaffning för tandkliniker
+  - button "Open Next.js Dev Tools" [ref=e134] [cursor=pointer]:
+    - img [ref=e135]
+  - alert [ref=e138]

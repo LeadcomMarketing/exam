@@ -1,0 +1,48 @@
+- generic [active] [ref=e1]:
+  - main [ref=e3]:
+    - main [ref=e139]:
+      - generic [ref=e141]:
+        - generic [ref=e142]: Leadcom
+        - button "Toggle Dark Mode" [ref=e143] [cursor=pointer]:
+          - img [ref=e145]
+      - generic [ref=e152]:
+        - generic [ref=e154]:
+          - generic [ref=e155]: Steg 6 av 6
+          - generic [ref=e156]: 100%
+        - generic [ref=e159]:
+          - heading "När vill ni helst komma igång med att öka inflödet av nya undersökningar?" [level=2] [ref=e269]
+          - paragraph [ref=e161]: Det här hjälper oss förstå prioritet och timing.
+        - generic [ref=e162]:
+          - button "A Omgående" [ref=e270] [cursor=pointer]:
+            - generic [ref=e271]: A
+            - generic [ref=e272]: Omgående
+            - img [ref=e273]
+          - button "B Inom 30 dagar" [ref=e275] [cursor=pointer]:
+            - generic [ref=e276]: B
+            - generic [ref=e277]: Inom 30 dagar
+            - img [ref=e278]
+          - button "C Inom 1–3 månader" [ref=e280] [cursor=pointer]:
+            - generic [ref=e281]: C
+            - generic [ref=e282]: Inom 1–3 månader
+            - img [ref=e283]
+          - button "D Vi undersöker bara alternativ just nu" [ref=e285] [cursor=pointer]:
+            - generic [ref=e286]: D
+            - generic [ref=e287]: Vi undersöker bara alternativ just nu
+            - img [ref=e288]
+        - generic [ref=e292]:
+          - img [ref=e293]
+          - generic [ref=e296]:
+            - paragraph [ref=e297]: Sista steget
+            - paragraph [ref=e298]: Efter detta får ni en kostnadsfri analys av er potential för fler bokade undersökningar.
+        - generic [ref=e194]:
+          - img [ref=e195]
+          - generic [ref=e197]:
+            - paragraph [ref=e198]: SNABBA RESULTAT
+            - paragraph [ref=e199]: De flesta kliniker ser de första nya patientförfrågningarna inom 2–4 veckor efter start.
+        - button "Tillbaka" [ref=e201] [cursor=pointer]:
+          - img [ref=e202]
+          - text: Tillbaka
+      - paragraph [ref=e205]: Leadcom — Datadriven patientanskaffning för tandkliniker
+  - button "Open Next.js Dev Tools" [ref=e134] [cursor=pointer]:
+    - img [ref=e135]
+  - alert [ref=e138]

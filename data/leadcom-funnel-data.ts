@@ -43,10 +43,10 @@ export const funnelSteps: FunnelStep[] = [
       body: 'En ny undersökning kan leda till behandlingar värda 15 000–50 000 kr över tid. Rätt volym gör skillnad.',
     },
     testimonial: {
-      quote: 'Vi gick från sporadiska förfrågningar till ett jämnare inflöde av nya patientundersökningar varje månad.',
-      initials: 'KC',
-      role: 'Klinikchef, Stockholm',
-      highlight: 'Fler bokningar / månad',
+      quote: 'Vi startade fredagen den 1 november. När vi kom in på måndagen hade vi fått 36 leads … Det var helt kaotiskt! Vi var tvungna att pausa kampanjen, få kontroll igen och därefter fortsätta.',
+      initials: 'JK',
+      role: 'Klinikägare, Stockholm',
+      highlight: '36 leads på en helg',
     },
   },
   {

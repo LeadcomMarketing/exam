@@ -7,8 +7,8 @@ export function ThemeProviders({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider
       attribute="class"
-      defaultTheme={siteConfig.theme}
-      enableSystem
+      defaultTheme="dark"
+      forcedTheme="dark"
     >
       {children}
     </ThemeProvider>

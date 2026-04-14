@@ -1,0 +1,43 @@
+- generic [active] [ref=e1]:
+  - main [ref=e3]:
+    - main [ref=e139]:
+      - generic [ref=e141]:
+        - generic [ref=e142]: Leadcom
+        - button "Toggle Dark Mode" [ref=e143] [cursor=pointer]:
+          - img [ref=e145]
+      - generic [ref=e152]:
+        - generic [ref=e154]:
+          - generic [ref=e155]: Steg 4 av 6
+          - generic [ref=e156]: 67%
+        - generic [ref=e159]:
+          - heading "Hur får ni in flest nya patientförfrågningar idag?" [level=2] [ref=e227]
+          - paragraph [ref=e161]: Välj det alternativ som bäst beskriver nuläget.
+        - generic [ref=e162]:
+          - button "A Främst via rekommendationer" [ref=e228] [cursor=pointer]:
+            - generic [ref=e229]: A
+            - generic [ref=e230]: Främst via rekommendationer
+            - img [ref=e231]
+          - button "B Google / organiska sökningar" [ref=e233] [cursor=pointer]:
+            - generic [ref=e234]: B
+            - generic [ref=e235]: Google / organiska sökningar
+            - img [ref=e236]
+          - button "C Annonsering fungerar redan lite grann" [ref=e238] [cursor=pointer]:
+            - generic [ref=e239]: C
+            - generic [ref=e240]: Annonsering fungerar redan lite grann
+            - img [ref=e241]
+          - button "D Vi har ingen stabil kanal idag" [ref=e243] [cursor=pointer]:
+            - generic [ref=e244]: D
+            - generic [ref=e245]: Vi har ingen stabil kanal idag
+            - img [ref=e246]
+        - generic [ref=e194]:
+          - img [ref=e195]
+          - generic [ref=e197]:
+            - paragraph [ref=e198]: BEROENDE AV REKOMMENDATIONER?
+            - paragraph [ref=e199]: Kliniker som bara förlitar sig på rekommendationer får ofta ett ojämnt inflöde. Med rätt system blir nya undersökningsbokningar förutsägbara.
+        - button "Tillbaka" [ref=e201] [cursor=pointer]:
+          - img [ref=e202]
+          - text: Tillbaka
+      - paragraph [ref=e205]: Leadcom — Datadriven patientanskaffning för tandkliniker
+  - button "Open Next.js Dev Tools" [ref=e134] [cursor=pointer]:
+    - img [ref=e135]
+  - alert [ref=e138]

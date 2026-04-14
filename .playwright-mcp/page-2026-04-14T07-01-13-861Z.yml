@@ -1,0 +1,43 @@
+- generic [active] [ref=e1]:
+  - main [ref=e3]:
+    - main [ref=e139]:
+      - generic [ref=e141]:
+        - generic [ref=e142]: Leadcom
+        - button "Toggle Dark Mode" [ref=e143] [cursor=pointer]:
+          - img [ref=e145]
+      - generic [ref=e152]:
+        - generic [ref=e154]:
+          - generic [ref=e155]: Steg 3 av 6
+          - generic [ref=e156]: 50%
+        - generic [ref=e159]:
+          - heading "Hur stor andel av era bokade undersökningar blir faktiskt patienter hos er?" [level=2] [ref=e206]
+          - paragraph [ref=e161]: Av de nya som bokar tid — hur många går vidare till behandling och återkommande vård?
+        - generic [ref=e162]:
+          - button "A Under 20 %" [ref=e207] [cursor=pointer]:
+            - generic [ref=e208]: A
+            - generic [ref=e209]: Under 20 %
+            - img [ref=e210]
+          - button "B 20–40 %" [ref=e212] [cursor=pointer]:
+            - generic [ref=e213]: B
+            - generic [ref=e214]: 20–40 %
+            - img [ref=e215]
+          - button "C 40–60 %" [ref=e217] [cursor=pointer]:
+            - generic [ref=e218]: C
+            - generic [ref=e219]: 40–60 %
+            - img [ref=e220]
+          - button "D 60 % eller mer" [ref=e222] [cursor=pointer]:
+            - generic [ref=e223]: D
+            - generic [ref=e224]: 60 % eller mer
+            - img [ref=e225]
+        - generic [ref=e194]:
+          - img [ref=e195]
+          - generic [ref=e197]:
+            - paragraph [ref=e198]: KONVERTERING AVGÖR
+            - paragraph [ref=e199]: Kliniker med hög konvertering får mer värde från varje ny patient. Vi hjälper er optimera hela kedjan.
+        - button "Tillbaka" [ref=e201] [cursor=pointer]:
+          - img [ref=e202]
+          - text: Tillbaka
+      - paragraph [ref=e205]: Leadcom — Datadriven patientanskaffning för tandkliniker
+  - button "Open Next.js Dev Tools" [ref=e134] [cursor=pointer]:
+    - img [ref=e135]
+  - alert [ref=e138]

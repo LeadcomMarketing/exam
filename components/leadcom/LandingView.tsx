@@ -62,7 +62,7 @@ export function LandingView({
 
           {/* Headline */}
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-foreground text-center text-balance max-w-lg mx-auto">
-            Få fler bokade<br />undersökningar varje månad
+            Fyll din kalender med 20–100 nya patienter varje månad – utan att förlita dig på mun-till-mun
           </h1>
 
           {/* Supporting text */}
