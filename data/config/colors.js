@@ -1,11 +1,11 @@
 /* Configure colors at https://shipixen.com/color-theme-explorer-shadcn */
 const colors = {
   primary: {
-    lighter: '#fde047',
-    light: '#facc15',
-    main: '#eab308',
-    dark: '#ca8a04',
-    darker: '#a16207',
+    lighter: '#ffb8a8',
+    light: '#ff9280',
+    main: '#ff6c50',
+    dark: '#e5553a',
+    darker: '#cc3d22',
   },
   secondary: {
     lighter: '#6ee7b7',

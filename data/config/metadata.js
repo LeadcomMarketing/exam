@@ -1,11 +1,11 @@
 const metadata = {
-  title: 'Mevolut | Simple B2C Fintech for your Money',
+  title: 'Leadcom — Datadriven patientanskaffning för tandkliniker',
   description:
-    'Manage your money the easy way with Mevolut. Track expenses, send money, and grow your savings – safely and simply. Sign up free today!',
-  domain: 'pageai.pro',
+    'Leadcom hjälper tandkliniker att skapa ett jämnt inflöde av nya patientundersökningar varje månad. Datadriven patientanskaffning utan att vara beroende av rekommendationer.',
+  domain: 'leadcom.no',
   logoTitle: '',
-  businessName: 'Mevolut',
-  siteUrl: 'https://pageai.pro',
+  businessName: 'Leadcom',
+  siteUrl: 'https://leadcom.no',
   siteRepo: '',
   socialBanner: '/api/og',
   supportEmail: '',
@@ -19,10 +19,10 @@ const metadata = {
   facebook: '',
   threads: '',
   mastodon: '',
-  author: 'Mevolut',
-  language: 'en-us',
+  author: 'Leadcom',
+  language: 'sv',
   theme: 'light',
-  locale: 'en-US',
+  locale: 'sv-SE',
 };
 
 module.exports = { metadata };

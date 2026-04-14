@@ -1,4 +1,4 @@
-import { Nunito_Sans } from 'next/font/google';
+import { Poppins, Caveat } from 'next/font/google';
 import { siteConfig } from '@/data/config/site.settings';
 import { ThemeProviders } from './theme-providers';
 import { Metadata } from 'next';
@@ -9,16 +9,25 @@ import '@/css/globals.css';
 import { SearchProvider } from '@/components/shared/SearchProvider';
 import { AnalyticsWrapper } from '@/components/shared/Analytics';
 
-const displayFont = Nunito_Sans({
+const displayFont = Poppins({
   subsets: ['latin'],
+  weight: ['600', '700'],
   display: 'swap',
   variable: '--font-space-display',
 });
 
-const baseFont = Nunito_Sans({
+const baseFont = Poppins({
   subsets: ['latin'],
+  weight: ['400', '500', '600'],
   display: 'swap',
   variable: '--font-space-default',
+});
+
+const handFont = Caveat({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  display: 'swap',
+  variable: '--font-handwritten',
 });
 
 const globalColors = colors;
@@ -79,7 +88,7 @@ export default function RootLayout({
   return (
     <html
       lang={siteConfig.language}
-      className={`${baseFont.variable} ${displayFont.variable} scroll-smooth`}
+      className={`${baseFont.variable} ${displayFont.variable} ${handFont.variable} scroll-smooth`}
       suppressHydrationWarning
     >
       <head>
@@ -92,21 +101,14 @@ export default function RootLayout({
         </style>
 
         <link
+          rel="icon"
+          type="image/svg+xml"
+          href="/static/favicons/favicon.svg"
+        />
+        <link
           rel="apple-touch-icon"
           sizes="76x76"
           href="/static/favicons/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/static/favicons/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/static/favicons/favicon-16x16.png"
         />
         <link rel="manifest" href="/static/favicons/manifest.webmanifest" />
         <link
