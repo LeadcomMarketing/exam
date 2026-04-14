@@ -47,3 +47,8 @@ yarn-error.log*
 
 # Contentlayer
 .contentlayer
+
+# Claude Code / Playwright MCP artifacts
+.claude/
+.playwright-mcp/
+tsconfig.tsbuildinfo
