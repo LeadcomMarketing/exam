@@ -36,28 +36,11 @@ export function LandingView({
       <LeadcomHeader />
 
       {/* Hero Band */}
-      <section className="w-full bg-background py-8 md:py-12 px-4">
+      <section className="w-full bg-background py-4 md:py-5 px-4">
         <div className="max-w-2xl mx-auto">
-          {/* Stats row */}
-          <div className="flex items-center justify-center gap-6 md:gap-10 mb-8">
-            <div className="text-center">
-              <p className="text-xl md:text-2xl font-bold text-foreground">300+</p>
-              <p className="text-[10px] uppercase tracking-wider text-muted-foreground mt-0.5">Kliniker hjälpta</p>
-            </div>
-            <div className="w-px h-8 bg-border" />
-            <div className="text-center">
-              <p className="text-xl md:text-2xl font-bold text-foreground">42.4</p>
-              <p className="text-[10px] uppercase tracking-wider text-muted-foreground mt-0.5">Nya patienter / månad i snitt</p>
-            </div>
-            <div className="w-px h-8 bg-border" />
-            <div className="text-center">
-              <p className="text-xl md:text-2xl font-bold text-foreground">1 vecka</p>
-              <p className="text-[10px] uppercase tracking-wider text-muted-foreground mt-0.5">Tid till första patient</p>
-            </div>
-          </div>
 
           {/* Google badge */}
-          <div className="flex items-center justify-center gap-2 mb-4">
+          <div className="flex items-center justify-center gap-2 mb-3">
             <div className="flex items-center gap-1">
               {[1,2,3,4,5].map(i => (
                 <svg key={i} className="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
@@ -74,7 +57,7 @@ export function LandingView({
           </div>
 
           {/* Eyebrow */}
-          <p className="text-[10px] md:text-xs font-medium tracking-widest text-muted-foreground text-center uppercase mb-3">
+          <p className="text-[10px] md:text-xs font-medium tracking-widest text-muted-foreground text-center uppercase mb-2">
             För ambitiösa tandkliniker som vill växa
           </p>
 
@@ -84,118 +67,126 @@ export function LandingView({
           </h1>
 
           {/* Supporting text */}
-          <p className="mt-3 text-base md:text-lg font-semibold text-foreground text-center">
+          <p className="mt-2 text-base md:text-lg font-semibold text-foreground text-center">
             Skandinaviens #1 byrå i tandvårdsbranschen
           </p>
-          <p className="mt-1 text-sm text-muted-foreground text-center">
+          <p className="mt-0.5 text-sm text-muted-foreground text-center">
             140 000 patienter genererade för kliniker i Skandinavien
           </p>
+
+          {/* Stats row — below headline, slightly smaller */}
+          <div className="flex items-center justify-center gap-6 md:gap-10 mt-4">
+            <div className="text-center">
+              <p className="text-lg md:text-xl font-bold text-foreground">300+</p>
+              <p className="text-[9px] uppercase tracking-wider text-muted-foreground mt-0.5">Kliniker hjälpta</p>
+            </div>
+            <div className="w-px h-7 bg-border" />
+            <div className="text-center">
+              <p className="text-lg md:text-xl font-bold text-foreground">42.4</p>
+              <p className="text-[9px] uppercase tracking-wider text-muted-foreground mt-0.5">Nya patienter / mån i snitt</p>
+            </div>
+            <div className="w-px h-7 bg-border" />
+            <div className="text-center">
+              <p className="text-lg md:text-xl font-bold text-foreground">1 vecka</p>
+              <p className="text-[9px] uppercase tracking-wider text-muted-foreground mt-0.5">Tid till första patient</p>
+            </div>
+          </div>
         </div>
       </section>
 
       <LogoTicker />
 
       {/* Question Card Section */}
-      <section className="flex-1 py-8 md:py-12 px-4 bg-background">
+      <section className="flex-1 py-4 md:py-6 px-4 bg-background">
         <div className="relative w-full max-w-lg mx-auto">
 
           {/* Hand-drawn annotation — visible only when there's room beside the card */}
-          <div className="hidden xl:flex absolute left-full top-[290px] ml-5 flex-row items-center gap-2 text-muted-foreground/80 rotate-3 pointer-events-none select-none">
-            {/* Arrow pointing left toward the options */}
+          <div className="hidden xl:flex absolute left-full top-[260px] ml-5 flex-row items-center gap-2 text-muted-foreground/80 rotate-3 pointer-events-none select-none">
             <svg width="80" height="30" viewBox="0 0 80 30" fill="none">
-              <path
-                d="M 76 14 C 58 5 35 6 10 16"
-                stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"
-              />
-              <path
-                d="M 10 16 L 22 8 M 10 16 L 22 23"
-                stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"
-              />
+              <path d="M 76 14 C 58 5 35 6 10 16" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+              <path d="M 10 16 L 22 8 M 10 16 L 22 23" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
             </svg>
-            <span
-              className="text-2xl leading-tight whitespace-nowrap"
-              style={{ fontFamily: 'var(--font-handwritten)' }}
-            >
+            <span className="text-2xl leading-tight whitespace-nowrap" style={{ fontFamily: 'var(--font-handwritten)' }}>
               Börja här
             </span>
           </div>
 
-        <div
-          id="question-card"
-          className="w-full bg-card border border-border rounded-xl shadow-lg overflow-hidden ring-1 ring-accent/20"
-        >
-          {/* Progress — secondary */}
-          <ProgressHeader currentStep={1} totalSteps={7} />
+          <div
+            id="question-card"
+            className="w-full bg-zinc-50 border border-zinc-200 rounded-xl shadow-lg overflow-hidden"
+          >
+            {/* Progress */}
+            <ProgressHeader currentStep={1} totalSteps={7} light />
 
-          {/* PRIMARY ACTION ZONE */}
-          <div className="px-6 pt-2 pb-6">
-            {/* Presenter */}
-            <div className="flex items-center gap-3 mb-3 pt-4">
-              <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0 border-2 border-accent/30">
-                <Image
-                  src="/static/images/team/bendik.avif"
-                  alt="Bendik Eide Anskau"
-                  fill
-                  sizes="40px"
-                  className="object-cover object-top"
+            {/* PRIMARY ACTION ZONE */}
+            <div className="px-6 pt-2 pb-6">
+              {/* Presenter */}
+              <div className="flex items-center gap-3 mb-3 pt-2">
+                <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0 border-2 border-accent/30">
+                  <Image
+                    src="/static/images/team/bendik.avif"
+                    alt="Bendik Eide Anskau"
+                    fill
+                    sizes="40px"
+                    className="object-cover object-top"
+                  />
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-zinc-900 leading-none">Bendik Eide Anskau</p>
+                  <p className="text-[10px] text-zinc-500 mt-0.5">Medgrundare, Leadcom</p>
+                </div>
+              </div>
+              <h2 className="text-2xl md:text-3xl font-extrabold text-zinc-900 leading-snug">
+                {step.title.split('undersökningar')[0]}
+                <span className="text-accent">undersökningar</span>?
+              </h2>
+              <p className="mt-2 text-xs text-zinc-500">{step.supportText}</p>
+            </div>
+
+            <div className="px-6 pb-8 space-y-3">
+              {step.options.map((option, i) => (
+                <FunnelOption
+                  key={option.label}
+                  label={option.label}
+                  marker={optionMarkers[i]}
+                  isSelected={selected === i}
+                  onClick={() => handleSelect(i)}
+                  large
                 />
-              </div>
+              ))}
+            </div>
+
+            {/* Divider */}
+            <div className="mx-6 border-t border-zinc-200" />
+
+            {/* SUPPORT ZONE */}
+            <div className="px-6 py-5 space-y-3">
+              {/* Service categories */}
               <div>
-                <p className="text-xs font-semibold text-card-foreground leading-none">Bendik Eide Anskau</p>
-                <p className="text-[10px] text-muted-foreground mt-0.5">Medgrundare, Leadcom</p>
+                <p className="text-[9px] font-semibold tracking-wider text-zinc-500 mb-2 uppercase">
+                  Områden vi hjälper kliniker att växa
+                </p>
+                <div className="flex flex-wrap gap-1.5">
+                  {serviceCategories.map((category) => (
+                    <span
+                      key={category}
+                      className="text-[10px] text-zinc-600 py-1 px-2 rounded-md bg-zinc-100 border border-zinc-200"
+                    >
+                      {category}
+                    </span>
+                  ))}
+                </div>
               </div>
+
+              {step.showGreenPanel && step.greenPanelTitle && step.greenPanelBody && (
+                <GreenPanel title={step.greenPanelTitle} body={step.greenPanelBody} light />
+              )}
+
+              {step.insightPanel && (
+                <InsightPanel title={step.insightPanel.title} body={step.insightPanel.body} light />
+              )}
             </div>
-            <h2 className="text-2xl md:text-3xl font-extrabold text-card-foreground leading-snug">
-              {step.title.split('undersökningar')[0]}
-              <span className="text-accent">undersökningar</span>?
-            </h2>
-            <p className="mt-2 text-xs text-muted-foreground">{step.supportText}</p>
           </div>
-
-          <div className="px-6 pb-8 space-y-3">
-            {step.options.map((option, i) => (
-              <FunnelOption
-                key={option.label}
-                label={option.label}
-                marker={optionMarkers[i]}
-                isSelected={selected === i}
-                onClick={() => handleSelect(i)}
-                large
-              />
-            ))}
-          </div>
-
-          {/* Divider — clear visual break */}
-          <div className="mx-6 border-t border-border/40" />
-
-          {/* SUPPORT ZONE — tertiary, deliberately quieter */}
-          <div className="px-6 py-5 space-y-3">
-            {/* Service categories */}
-            <div>
-              <p className="text-[9px] font-semibold tracking-wider text-muted-foreground mb-2 uppercase">
-                Områden vi hjälper kliniker att växa
-              </p>
-              <div className="flex flex-wrap gap-1.5">
-                {serviceCategories.map((category) => (
-                  <span
-                    key={category}
-                    className="text-[10px] text-muted-foreground py-1 px-2 rounded-md bg-secondary/60 border border-border/50"
-                  >
-                    {category}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {step.showGreenPanel && step.greenPanelTitle && step.greenPanelBody && (
-              <GreenPanel title={step.greenPanelTitle} body={step.greenPanelBody} />
-            )}
-
-            {step.insightPanel && (
-              <InsightPanel title={step.insightPanel.title} body={step.insightPanel.body} />
-            )}
-          </div>
-        </div>
         </div>
       </section>
 

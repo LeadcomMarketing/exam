@@ -1,29 +1,29 @@
 import { Lightbulb, CheckCircle2 } from 'lucide-react'
 
-export function InsightPanel({ title, body }: { title: string; body: string }) {
+export function InsightPanel({ title, body, light = false }: { title: string; body: string; light?: boolean }) {
   return (
-    <div className="p-4 rounded-lg bg-background border border-border">
+    <div className={`p-4 rounded-lg border ${light ? 'bg-zinc-100 border-zinc-200' : 'bg-background border-border'}`}>
       <div className="flex items-start gap-3">
         <Lightbulb className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
         <div>
           <p className="text-[10px] font-semibold tracking-wider text-accent uppercase mb-1">{title}</p>
-          <p className="text-xs text-muted-foreground leading-relaxed">{body}</p>
+          <p className={`text-xs leading-relaxed ${light ? 'text-zinc-600' : 'text-muted-foreground'}`}>{body}</p>
         </div>
       </div>
     </div>
   )
 }
 
-export function GreenPanel({ title, body }: { title: string; body: string }) {
+export function GreenPanel({ title, body, light = false }: { title: string; body: string; light?: boolean }) {
   return (
-    <div className="p-4 rounded-lg bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-900/30">
+    <div className={`p-4 rounded-lg border ${light ? 'bg-emerald-50 border-emerald-200' : 'bg-emerald-50 dark:bg-emerald-950/30 border-emerald-200 dark:border-emerald-900/30'}`}>
       <div className="flex items-start gap-3">
-        <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 flex-shrink-0 mt-0.5" />
+        <CheckCircle2 className={`w-4 h-4 flex-shrink-0 mt-0.5 ${light ? 'text-emerald-600' : 'text-emerald-600 dark:text-emerald-400'}`} />
         <div>
-          <p className="text-[10px] font-semibold tracking-wider text-emerald-600 dark:text-emerald-400 uppercase mb-1">
+          <p className={`text-[10px] font-semibold tracking-wider uppercase mb-1 ${light ? 'text-emerald-700' : 'text-emerald-600 dark:text-emerald-400'}`}>
             {title}
           </p>
-          <p className="text-xs text-emerald-700 dark:text-emerald-100/90 leading-relaxed">{body}</p>
+          <p className={`text-xs leading-relaxed ${light ? 'text-emerald-800' : 'text-emerald-700 dark:text-emerald-100/90'}`}>{body}</p>
         </div>
       </div>
     </div>
