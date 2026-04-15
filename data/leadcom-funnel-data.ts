@@ -111,9 +111,23 @@ export const funnelSteps: FunnelStep[] = [
     showGreenPanel: true,
     greenPanelTitle: 'Sista steget',
     greenPanelBody:
-      'Efter detta får ni en kostnadsfri analys av er potential för fler bokade undersökningar.',
+      'Efter detta berättar vi exakt vad vi kan leverera för er klinik — utan förpliktelse.',
+  },
+  {
+    step: 7,
+    title: 'Baserat på era svar — verkar det värt ett snack?',
+    supportText: 'Ingen förpliktelse. Vi berättar vad vi kan leverera för just er klinik.',
+    options: [
+      { label: 'Ja, absolut — visa mig vad ni kan göra', outcome: 'continue' },
+      { label: 'Nej, inte just nu', outcome: 'disqualify' },
+    ],
+    showGreenPanel: true,
+    greenPanelTitle: 'Typiskt resultat för er klinikprofil',
+    greenPanelBody: '20–50 nya patienter per månad, 163 kr per lead i snitt. Resultat inom 1 vecka.',
   },
 ]
+
+export const TOTAL_FUNNEL_STEPS = funnelSteps.length
 
 export const serviceCategories = [
   'Nya patientundersökningar',
@@ -141,6 +155,8 @@ export interface CaseTestimonial {
   logoAlt: string
   photoSrc: string
   photoAlt: string
+  photoWidth: number
+  photoHeight: number
   logoInvertInLight?: boolean
   prefix: string
   boldPart: string
@@ -154,6 +170,8 @@ export const caseTestimonials: CaseTestimonial[] = [
     logoAlt: 'Tannami Klinikk',
     photoSrc: '/static/images/testimonials/tannami-team.avif',
     photoAlt: 'Tannami Klinikk team',
+    photoWidth: 774,
+    photoHeight: 1024,
     boldPart: '252 nye pasienter de første 3 månedene',
     accentPart: 'økte inntektene med ytterligere ca. 550 000 kr.',
     prefix: 'Tannami fikk ',
@@ -164,10 +182,24 @@ export const caseTestimonials: CaseTestimonial[] = [
     logoAlt: 'Vital Tannhelse',
     photoSrc: '/static/images/testimonials/vital-clinic.avif',
     photoAlt: 'Vital Tannhelse klinikk',
+    photoWidth: 1015,
+    photoHeight: 1024,
     logoInvertInLight: true,
     boldPart: '1402 leads på 3 måneder, til 163 kr per lead.',
     accentPart: '351 nye pasienter på 30 dager.',
     prefix: 'Vital Tannhelse fikk ',
     middle: ' Rekorden deres var ',
+  },
+  {
+    logoSrc: '/static/images/testimonials/tannami-logo.avif',
+    logoAlt: 'Darya Bassari',
+    photoSrc: '/static/images/testimonials/darya-interview.avif',
+    photoAlt: 'Darya Bassari intervju',
+    photoWidth: 800,
+    photoHeight: 534,
+    prefix: 'Daryas klinik växte ',
+    boldPart: 'från 15,9 till 76,4 miljoner kr på fyra år',
+    middle: ' med hjälp av Leadcom. ',
+    accentPart: '"En tillväxtresa i en klass för sig."',
   },
 ]

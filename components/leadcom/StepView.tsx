@@ -13,17 +13,26 @@ export function StepView({
   stepIndex,
   onNext,
   onBack,
+  onDisqualify,
 }: {
   stepIndex: number
   onNext: () => void
   onBack: () => void
+  onDisqualify: () => void
 }) {
   const [selected, setSelected] = useState<number | null>(null)
   const step = funnelSteps[stepIndex]
 
   const handleSelect = (index: number) => {
     setSelected(index)
-    setTimeout(onNext, 300)
+    const option = step.options[index]
+    setTimeout(() => {
+      if (option.outcome === 'disqualify') {
+        onDisqualify()
+      } else {
+        onNext()
+      }
+    }, 300)
   }
 
   return (
@@ -32,7 +41,7 @@ export function StepView({
 
       <div className="flex-1 flex items-center justify-center py-8 md:py-12 px-4">
         <div className="w-full max-w-lg mx-auto bg-card border border-border rounded-xl shadow-lg overflow-hidden">
-          <ProgressHeader currentStep={step.step} totalSteps={6} />
+          <ProgressHeader currentStep={step.step} totalSteps={7} />
 
           <div className="px-5 pb-4">
             <h2 className="text-lg md:text-xl font-bold leading-snug text-card-foreground">{step.title}</h2>

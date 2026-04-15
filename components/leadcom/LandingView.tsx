@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { funnelSteps, serviceCategories, optionMarkers } from '@/data/leadcom-funnel-data'
 import { LeadcomHeader } from './LeadcomHeader'
 import { LogoTicker } from './LogoTicker'
@@ -40,19 +41,30 @@ export function LandingView({
           {/* Stats row */}
           <div className="flex items-center justify-center gap-6 md:gap-10 mb-8">
             <div className="text-center">
-              <p className="text-xl md:text-2xl font-bold text-foreground">150+</p>
+              <p className="text-xl md:text-2xl font-bold text-foreground">300+</p>
               <p className="text-[10px] uppercase tracking-wider text-muted-foreground mt-0.5">Kliniker hjälpta</p>
             </div>
             <div className="w-px h-8 bg-border" />
             <div className="text-center">
-              <p className="text-xl md:text-2xl font-bold text-foreground">2 500+</p>
-              <p className="text-[10px] uppercase tracking-wider text-muted-foreground mt-0.5">Nya patienter / månad</p>
+              <p className="text-xl md:text-2xl font-bold text-foreground">42.4</p>
+              <p className="text-[10px] uppercase tracking-wider text-muted-foreground mt-0.5">Nya patienter / månad i snitt</p>
             </div>
             <div className="w-px h-8 bg-border" />
             <div className="text-center">
-              <p className="text-xl md:text-2xl font-bold text-foreground">2–4 v</p>
-              <p className="text-[10px] uppercase tracking-wider text-muted-foreground mt-0.5">Tid till resultat</p>
+              <p className="text-xl md:text-2xl font-bold text-foreground">1 vecka</p>
+              <p className="text-[10px] uppercase tracking-wider text-muted-foreground mt-0.5">Tid till första patient</p>
             </div>
+          </div>
+
+          {/* Google badge */}
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <div className="flex items-center gap-1">
+              {[1,2,3,4,5].map(i => (
+                <svg key={i} className="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              ))}
+            </div>
+            <span className="text-sm font-semibold text-foreground">4.8</span>
+            <span className="text-xs text-muted-foreground">på Google</span>
           </div>
 
           {/* Eyebrow */}
@@ -62,12 +74,15 @@ export function LandingView({
 
           {/* Headline */}
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-foreground text-center text-balance max-w-lg mx-auto">
-            Fyll din kalender med 20–100 nya patienter varje månad – utan att förlita dig på mun-till-mun
+            Få 30–50 nya patienter varje månad
           </h1>
 
           {/* Supporting text */}
-          <p className="mt-4 text-sm md:text-base text-muted-foreground text-center max-w-md mx-auto leading-relaxed">
-            Skapa ett jämnt inflöde av nya patienter via undersökningar. Datadriven patientanskaffning utan att vara beroende av rekommendationer.
+          <p className="mt-3 text-base md:text-lg font-semibold text-foreground text-center">
+            Skandinaviens #1 byrå i tandvårdsbranschen
+          </p>
+          <p className="mt-1 text-sm text-muted-foreground text-center">
+            140 000 patienter genererade för kliniker i Skandinavien
           </p>
         </div>
       </section>
@@ -101,13 +116,29 @@ export function LandingView({
 
         <div
           id="question-card"
-          className="w-full bg-card border border-border rounded-xl shadow-lg overflow-hidden"
+          className="w-full bg-card border border-border rounded-xl shadow-lg overflow-hidden ring-1 ring-accent/20"
         >
           {/* Progress — secondary */}
-          <ProgressHeader currentStep={1} totalSteps={6} />
+          <ProgressHeader currentStep={1} totalSteps={7} />
 
           {/* PRIMARY ACTION ZONE */}
           <div className="px-6 pt-2 pb-6">
+            {/* Presenter */}
+            <div className="flex items-center gap-3 mb-3 pt-4">
+              <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0 border-2 border-accent/30">
+                <Image
+                  src="/static/images/team/bendik.avif"
+                  alt="Bendik Eide Anskau"
+                  fill
+                  sizes="40px"
+                  className="object-cover object-top"
+                />
+              </div>
+              <div>
+                <p className="text-xs font-semibold text-card-foreground leading-none">Bendik Eide Anskau</p>
+                <p className="text-[10px] text-muted-foreground mt-0.5">Medgrundare, Leadcom</p>
+              </div>
+            </div>
             <h2 className="text-2xl md:text-3xl font-extrabold text-card-foreground leading-snug">
               {step.title.split('undersökningar')[0]}
               <span className="text-accent">undersökningar</span>?
