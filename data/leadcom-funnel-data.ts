@@ -50,7 +50,7 @@ export const funnelSteps: FunnelStep[] = [
       highlight: '36 leads på en helg',
     },
     caseStudy: {
-      imageSrc: '/static/images/testimonials/darya-interview.avif',
+      imageSrc: '/static/images/testimonials/darya-interview.png',
       imageAlt: 'Darya Bassari — Clear Tannlegesenter',
       quote: 'En tillväxtresa i en klass för sig: Daryas klinik ökade från 15,9 till 76,4 miljoner på fyra år med hjälp av Leadcom.',
       clinic: 'Clear Tannlegesenter',
@@ -200,7 +200,7 @@ export const caseTestimonials: CaseTestimonial[] = [
   {
     logoSrc: '/static/images/testimonials/tannami-logo.avif',
     logoAlt: 'Darya Bassari',
-    photoSrc: '/static/images/testimonials/darya-interview.avif',
+    photoSrc: '/static/images/testimonials/darya-interview.png',
     photoAlt: 'Darya Bassari intervju',
     photoWidth: 800,
     photoHeight: 534,
