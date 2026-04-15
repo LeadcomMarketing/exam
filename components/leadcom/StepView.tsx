@@ -8,6 +8,7 @@ import { LeadcomHeader } from './LeadcomHeader'
 import { ProgressHeader } from './ProgressHeader'
 import { FunnelOption } from './FunnelOption'
 import { InsightPanel, GreenPanel, Testimonial } from './panels'
+import { CaseStudyPanel } from './CaseStudyPanel'
 
 export function StepView({
   stepIndex,
@@ -60,6 +61,17 @@ export function StepView({
               />
             ))}
           </div>
+
+          {step.caseStudy && (
+            <div className="px-5 pb-4">
+              <CaseStudyPanel
+                imageSrc={step.caseStudy.imageSrc}
+                imageAlt={step.caseStudy.imageAlt}
+                quote={step.caseStudy.quote}
+                clinic={step.caseStudy.clinic}
+              />
+            </div>
+          )}
 
           {step.testimonial && (
             <div className="px-5 pb-4">

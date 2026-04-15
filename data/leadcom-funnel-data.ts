@@ -5,6 +5,7 @@ export interface FunnelStep {
   options: { label: string; outcome?: 'continue' | 'disqualify' }[]
   insightPanel?: { title: string; body: string }
   testimonial?: { quote: string; initials: string; role: string; highlight: string }
+  caseStudy?: { imageSrc: string; imageAlt: string; quote: string; clinic: string }
   showGreenPanel?: boolean
   greenPanelTitle?: string
   greenPanelBody?: string
@@ -47,6 +48,12 @@ export const funnelSteps: FunnelStep[] = [
       initials: 'JK',
       role: 'Klinikägare, Stockholm',
       highlight: '36 leads på en helg',
+    },
+    caseStudy: {
+      imageSrc: '/static/images/testimonials/darya-interview.avif',
+      imageAlt: 'Darya Bassari — Clear Tannlegesenter',
+      quote: 'En tillväxtresa i en klass för sig: Daryas klinik ökade från 15,9 till 76,4 miljoner på fyra år med hjälp av Leadcom.',
+      clinic: 'Clear Tannlegesenter',
     },
   },
   {

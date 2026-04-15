@@ -55,13 +55,13 @@ export function ThankYouView({ onRestart, onSubmit }: { onRestart: () => void; o
                   value={form.name}
                   onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
                   required
-                  className="h-12 bg-zinc-800 border-zinc-700 text-zinc-100 placeholder:text-zinc-500 focus-visible:ring-accent/50"
+                  className="h-12 bg-zinc-700 border-zinc-600 text-zinc-50 placeholder:text-zinc-400 focus-visible:ring-accent/50"
                 />
                 <Input
                   placeholder="Kliniknamn (valfritt)"
                   value={form.clinic}
                   onChange={e => setForm(f => ({ ...f, clinic: e.target.value }))}
-                  className="h-12 bg-zinc-800 border-zinc-700 text-zinc-100 placeholder:text-zinc-500 focus-visible:ring-accent/50"
+                  className="h-12 bg-zinc-700 border-zinc-600 text-zinc-50 placeholder:text-zinc-400 focus-visible:ring-accent/50"
                 />
                 <Input
                   type="tel"
@@ -69,7 +69,7 @@ export function ThankYouView({ onRestart, onSubmit }: { onRestart: () => void; o
                   value={form.phone}
                   onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
                   required
-                  className="h-12 bg-zinc-800 border-zinc-700 text-zinc-100 placeholder:text-zinc-500 focus-visible:ring-accent/50"
+                  className="h-12 bg-zinc-700 border-zinc-600 text-zinc-50 placeholder:text-zinc-400 focus-visible:ring-accent/50"
                 />
                 <Input
                   type="email"
@@ -77,7 +77,7 @@ export function ThankYouView({ onRestart, onSubmit }: { onRestart: () => void; o
                   value={form.email}
                   onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
                   required
-                  className="h-12 bg-zinc-800 border-zinc-700 text-zinc-100 placeholder:text-zinc-500 focus-visible:ring-accent/50"
+                  className="h-12 bg-zinc-700 border-zinc-600 text-zinc-50 placeholder:text-zinc-400 focus-visible:ring-accent/50"
                 />
 
                 <Button
