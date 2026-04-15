@@ -39,13 +39,13 @@ export function StepView({
     <main className="w-full min-h-screen flex flex-col">
       <LeadcomHeader />
 
-      <div className="flex-1 flex items-center justify-center py-8 md:py-12 px-4">
-        <div className="w-full max-w-lg mx-auto bg-card border border-border rounded-xl shadow-lg overflow-hidden">
-          <ProgressHeader currentStep={step.step} totalSteps={7} />
+      <div className="flex-1 flex items-center justify-center py-6 md:py-10 px-4">
+        <div className="w-full max-w-lg mx-auto bg-zinc-50 border border-zinc-200 rounded-xl shadow-lg overflow-hidden">
+          <ProgressHeader currentStep={step.step} totalSteps={7} light />
 
           <div className="px-5 pb-4">
-            <h2 className="text-lg md:text-xl font-bold leading-snug text-card-foreground">{step.title}</h2>
-            <p className="mt-2 text-sm text-muted-foreground">{step.supportText}</p>
+            <h2 className="text-lg md:text-xl font-bold leading-snug text-zinc-900">{step.title}</h2>
+            <p className="mt-2 text-sm text-zinc-500">{step.supportText}</p>
           </div>
 
           <div className="px-5 pb-4 space-y-3">
@@ -56,6 +56,7 @@ export function StepView({
                 marker={optionMarkers[i]}
                 isSelected={selected === i}
                 onClick={() => handleSelect(i)}
+                large
               />
             ))}
           </div>
@@ -73,22 +74,22 @@ export function StepView({
 
           {step.showGreenPanel && step.greenPanelTitle && step.greenPanelBody && (
             <div className="px-5 pb-4">
-              <GreenPanel title={step.greenPanelTitle} body={step.greenPanelBody} />
+              <GreenPanel title={step.greenPanelTitle} body={step.greenPanelBody} light />
             </div>
           )}
 
           {step.insightPanel && (
             <div className="px-5 pb-4">
-              <InsightPanel title={step.insightPanel.title} body={step.insightPanel.body} />
+              <InsightPanel title={step.insightPanel.title} body={step.insightPanel.body} light />
             </div>
           )}
 
-          <div className="px-5 pb-5">
+          <div className="px-5 pb-5 border-t border-zinc-200 pt-3">
             <Button
               variant="ghost"
               size="sm"
               onClick={onBack}
-              className="text-muted-foreground hover:text-foreground h-8 px-2"
+              className="text-zinc-400 hover:text-zinc-700 h-8 px-2"
             >
               <ArrowLeft className="w-4 h-4 mr-1" />
               Tillbaka
@@ -98,7 +99,7 @@ export function StepView({
       </div>
 
       <footer className="py-6 px-4 border-t border-border/30">
-        <p className="text-[11px] text-muted-foreground text-center">
+        <p className="text-[11px] text-muted-foreground/60 text-center">
           Leadcom — Datadriven patientanskaffning för tandkliniker
         </p>
       </footer>

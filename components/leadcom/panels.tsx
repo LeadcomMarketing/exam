@@ -42,14 +42,14 @@ export function Testimonial({
   highlight: string
 }) {
   return (
-    <div className="p-4 rounded-lg bg-secondary/40 border border-border/50">
-      <p className="text-sm text-card-foreground italic leading-relaxed">&ldquo;{quote}&rdquo;</p>
+    <div className="p-4 rounded-lg bg-zinc-100 border border-zinc-200">
+      <p className="text-sm text-zinc-700 italic leading-relaxed">&ldquo;{quote}&rdquo;</p>
       <div className="mt-3 flex items-center gap-2">
-        <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center">
-          <span className="text-xs font-medium text-muted-foreground">{initials}</span>
+        <div className="w-8 h-8 rounded-full bg-zinc-200 flex items-center justify-center">
+          <span className="text-xs font-medium text-zinc-600">{initials}</span>
         </div>
         <div>
-          <p className="text-xs font-medium text-card-foreground">{role}</p>
+          <p className="text-xs font-medium text-zinc-700">{role}</p>
           <p className="text-[10px] text-accent">{highlight}</p>
         </div>
       </div>
