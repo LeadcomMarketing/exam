@@ -94,7 +94,7 @@ export function LandingView({
         <div className="relative w-full max-w-lg mx-auto">
 
           {/* Hand-drawn annotation — visible only when there's room beside the card */}
-          <div className="hidden xl:flex absolute left-full top-[290px] ml-5 flex-row items-center gap-2 text-muted-foreground/60 rotate-3 pointer-events-none select-none">
+          <div className="hidden xl:flex absolute left-full top-[290px] ml-5 flex-row items-center gap-2 text-muted-foreground/80 rotate-3 pointer-events-none select-none">
             {/* Arrow pointing left toward the options */}
             <svg width="80" height="30" viewBox="0 0 80 30" fill="none">
               <path
@@ -143,7 +143,7 @@ export function LandingView({
               {step.title.split('undersökningar')[0]}
               <span className="text-accent">undersökningar</span>?
             </h2>
-            <p className="mt-2 text-xs text-muted-foreground/70">{step.supportText}</p>
+            <p className="mt-2 text-xs text-muted-foreground">{step.supportText}</p>
           </div>
 
           <div className="px-6 pb-8 space-y-3">
@@ -163,7 +163,7 @@ export function LandingView({
           <div className="mx-6 border-t border-border/40" />
 
           {/* SUPPORT ZONE — tertiary, deliberately quieter */}
-          <div className="opacity-80 px-6 py-5 space-y-3">
+          <div className="px-6 py-5 space-y-3">
             {/* Service categories */}
             <div>
               <p className="text-[9px] font-semibold tracking-wider text-muted-foreground mb-2 uppercase">
@@ -194,7 +194,7 @@ export function LandingView({
       </section>
 
       <footer className="py-6 px-4 border-t border-border/30">
-        <p className="text-[11px] text-muted-foreground/50 text-center">
+        <p className="text-[11px] text-muted-foreground/60 text-center">
           Leadcom — Datadriven patientanskaffning för tandkliniker
         </p>
       </footer>

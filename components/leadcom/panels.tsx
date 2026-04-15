@@ -23,7 +23,7 @@ export function GreenPanel({ title, body }: { title: string; body: string }) {
           <p className="text-[10px] font-semibold tracking-wider text-emerald-600 dark:text-emerald-400 uppercase mb-1">
             {title}
           </p>
-          <p className="text-xs text-emerald-700 dark:text-emerald-100/70 leading-relaxed">{body}</p>
+          <p className="text-xs text-emerald-700 dark:text-emerald-100/90 leading-relaxed">{body}</p>
         </div>
       </div>
     </div>
