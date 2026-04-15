@@ -31,7 +31,7 @@ export function CaseStudyPanel({
             {clinic}
           </p>
           <p className="text-xs text-zinc-700 leading-relaxed">
-            &ldquo;{quote}&rdquo;
+            {quote}
           </p>
         </div>
       </div>

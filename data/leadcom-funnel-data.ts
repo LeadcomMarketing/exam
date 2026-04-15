@@ -43,12 +43,6 @@ export const funnelSteps: FunnelStep[] = [
       title: 'GENOMSNITTLIGT PATIENTVÄRDE',
       body: 'En ny undersökning kan leda till behandlingar värda 15 000–50 000 kr över tid. Rätt volym gör skillnad.',
     },
-    testimonial: {
-      quote: 'Vi startade fredagen den 1 november. När vi kom in på måndagen hade vi fått 36 leads … Det var helt kaotiskt! Vi var tvungna att pausa kampanjen, få kontroll igen och därefter fortsätta.',
-      initials: 'JK',
-      role: 'Klinikägare, Stockholm',
-      highlight: '36 leads på en helg',
-    },
     caseStudy: {
       imageSrc: '/static/images/testimonials/darya-interview.png',
       imageAlt: 'Darya Bassari — Clear Tannlegesenter',
@@ -69,6 +63,12 @@ export const funnelSteps: FunnelStep[] = [
     insightPanel: {
       title: 'KONVERTERING AVGÖR',
       body: 'Kliniker med hög konvertering får mer värde från varje ny patient. Vi hjälper er optimera hela kedjan.',
+    },
+    testimonial: {
+      quote: 'Vi startade fredagen den 1 november. När vi kom in på måndagen hade vi fått 36 leads … Det var helt kaotiskt! Vi var tvungna att pausa kampanjen, få kontroll igen och därefter fortsätta.',
+      initials: 'JK',
+      role: 'Klinikägare, Stockholm',
+      highlight: '36 leads på en helg',
     },
   },
   {
