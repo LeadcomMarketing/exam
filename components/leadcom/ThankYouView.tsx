@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ArrowRight, RotateCcw, CheckCircle2 } from 'lucide-react'
 import { Button } from '@/components/shared/ui/button'
 import { Input } from '@/components/shared/ui/input'
@@ -24,6 +24,8 @@ const expectations = [
 export function ThankYouView({ onRestart, onSubmit }: { onRestart: () => void; onSubmit: () => void }) {
   const [form, setForm] = useState({ name: '', email: '', clinic: '', website: '' })
   const [submitting, setSubmitting] = useState(false)
+
+  useEffect(() => { window.scrollTo({ top: 0, behavior: 'instant' }) }, [])
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()

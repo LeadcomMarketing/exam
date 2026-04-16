@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect } from 'react'
 import { ArrowRight, RotateCcw, ShieldCheck, Clock, RefreshCw, Zap, Sparkles } from 'lucide-react'
 import { Button } from '@/components/shared/ui/button'
 import { LeadcomHeader } from './LeadcomHeader'
@@ -34,6 +35,8 @@ export function ConfirmView({
   onProceed: () => void
   onRestart: () => void
 }) {
+  useEffect(() => { window.scrollTo({ top: 0, behavior: 'instant' }) }, [])
+
   return (
     <main className="w-full min-h-screen flex flex-col">
       <LeadcomHeader />

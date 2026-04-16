@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ArrowLeft } from 'lucide-react'
 import { Button } from '@/components/shared/ui/button'
 import { funnelSteps, optionMarkers } from '@/data/leadcom-funnel-data'
@@ -23,6 +23,10 @@ export function StepView({
 }) {
   const [selected, setSelected] = useState<number | null>(null)
   const step = funnelSteps[stepIndex]
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' })
+  }, [])
 
   const handleSelect = (index: number) => {
     setSelected(index)

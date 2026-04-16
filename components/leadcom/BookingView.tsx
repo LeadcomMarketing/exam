@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ArrowRight, RotateCcw, ChevronDown, ChevronUp, Clock, Users, MapPin } from 'lucide-react'
 import { Button } from '@/components/shared/ui/button'
 import { LeadcomHeader } from './LeadcomHeader'
@@ -35,6 +35,8 @@ const faqItems = [
 
 export function BookingView({ onRestart }: { onRestart: () => void }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
+
+  useEffect(() => { window.scrollTo({ top: 0, behavior: 'instant' }) }, [])
 
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i)
 
