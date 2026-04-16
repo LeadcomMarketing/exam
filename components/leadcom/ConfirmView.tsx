@@ -13,7 +13,7 @@ const features = [
   {
     icon: Clock,
     title: 'Effektiv automatisk uppföljning',
-    body: 'Vårt team kontaktar varje lead inom 4 min — kvällar och helger — och vår AI-teknologi bokar effektivt in många lead innan du ens hunnit ringa dem.',
+    body: 'Vår AI-teknologi kontaktar automatiskt varje potentiell patient inom 3 minuter – även kvällar och helger. Ofta bokar den in patienter innan du ens hunnit ringa upp.',
   },
   {
     icon: Zap,
