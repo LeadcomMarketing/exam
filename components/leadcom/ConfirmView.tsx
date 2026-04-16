@@ -1,8 +1,31 @@
 'use client'
 
-import { ArrowRight, RotateCcw } from 'lucide-react'
+import { ArrowRight, RotateCcw, ShieldCheck, Clock, RefreshCw, Zap, Sparkles, Info } from 'lucide-react'
 import { Button } from '@/components/shared/ui/button'
 import { LeadcomHeader } from './LeadcomHeader'
+
+const features = [
+  {
+    icon: Clock,
+    title: 'Svar inom 4 minuter',
+    body: 'Vårt team kontaktar varje lead inom 4 min — kvällar och helger. Ring, sms och WhatsApp tills besöket är bokat.',
+  },
+  {
+    icon: RefreshCw,
+    title: '8-stegs uppföljning',
+    body: 'De flesta patienter bokar inte vid första kontakt. Vi följer upp 8 gånger via sms, mejl och WhatsApp.',
+  },
+  {
+    icon: Zap,
+    title: 'Proaktiv anskaffning',
+    body: 'Vi når de 80% som inte aktivt söker tandläkare — innan de börjar jämföra kliniker. Ni blir deras första val.',
+  },
+  {
+    icon: Sparkles,
+    title: 'Alla högvärdiga behandlingar',
+    body: 'Undersökningar, implantat, estetik, akut — vi anpassar mixen för maximal avkastning på er annonsbudget.',
+  },
+]
 
 export function ConfirmView({
   onProceed,
@@ -15,16 +38,14 @@ export function ConfirmView({
     <main className="w-full min-h-screen flex flex-col">
       <LeadcomHeader />
 
-      <div className="flex-1 flex items-center justify-center py-8 md:py-12 px-4">
-        <div className="w-full max-w-lg mx-auto">
+      <div className="flex-1 py-8 md:py-12 px-4">
+        <div className="w-full max-w-lg mx-auto space-y-4">
 
+          {/* ── Top results card ── */}
           <div className="bg-zinc-50 border border-zinc-200 rounded-xl shadow-lg overflow-hidden">
-
-            {/* Accent top strip */}
             <div className="h-1 w-full bg-accent" />
 
             <div className="p-6 md:p-8">
-              {/* Eyebrow */}
               <p className="text-[10px] font-semibold tracking-widest text-accent uppercase mb-4">
                 Perfekt — ni passar
               </p>
@@ -53,6 +74,7 @@ export function ConfirmView({
                 </div>
               </div>
 
+              {/* Primary CTA */}
               <Button
                 onClick={onProceed}
                 size="lg"
@@ -61,17 +83,88 @@ export function ConfirmView({
                 Fortsätt — boka gratis samtal
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
-
-              <div className="mt-4 text-center">
-                <button
-                  onClick={onRestart}
-                  className="text-xs text-zinc-400 hover:text-zinc-600 flex items-center gap-1 mx-auto transition-colors"
-                >
-                  <RotateCcw className="w-3 h-3" />
-                  Börja om
-                </button>
-              </div>
             </div>
+          </div>
+
+          {/* ── How it works card ── */}
+          <div className="bg-zinc-50 border border-zinc-200 rounded-xl shadow-lg overflow-hidden">
+            <div className="px-6 pt-6 pb-5">
+              <p className="text-[10px] font-semibold tracking-widest text-zinc-400 uppercase mb-3">
+                Så fungerar det
+              </p>
+              <h2 className="text-lg md:text-xl font-bold text-zinc-900 leading-snug mb-5">
+                Därför kan vi <em className="not-italic text-accent font-extrabold">garantera</em> resultat
+              </h2>
+
+              {/* Guarantee box */}
+              <div className="flex gap-3 p-4 rounded-lg bg-emerald-50 border border-emerald-200 mb-5">
+                <ShieldCheck className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-xs font-semibold text-emerald-800 mb-1 uppercase tracking-wide">
+                    Vår garanti
+                  </p>
+                  <p className="text-xs font-semibold text-emerald-800 mb-1">
+                    Missar vi målet — pausar vi fakturering
+                  </p>
+                  <p className="text-xs text-emerald-700 leading-relaxed">
+                    Vi tar bara på oss kliniker där vi är säkra på att vi kan leverera. Om vi inte når det avtalade antalet bokade undersökningar, pausar vi alla kostnader tills vi kommer ikapp.
+                  </p>
+                </div>
+              </div>
+
+              {/* Feature grid */}
+              <div className="grid grid-cols-2 gap-3 mb-5">
+                {features.map((f) => (
+                  <div key={f.title} className="bg-white border border-zinc-200 rounded-lg p-4 shadow-sm">
+                    <f.icon className="w-4 h-4 text-accent mb-2" />
+                    <p className="text-xs font-semibold text-zinc-900 mb-1 leading-snug">{f.title}</p>
+                    <p className="text-[11px] text-zinc-500 leading-relaxed">{f.body}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Founder quote */}
+              <div className="flex gap-3 p-4 rounded-lg bg-zinc-100 border border-zinc-200 mb-5">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-zinc-300 flex items-center justify-center text-[10px] font-bold text-zinc-600">
+                  MP
+                </div>
+                <div>
+                  <p className="text-xs text-zinc-600 italic leading-relaxed mb-2">
+                    "Skillnaden mellan en klinik som får 5 nya patienter i månaden och en som får 50 handlar aldrig om annonsbudget. Det handlar alltid om vad som händer efter att någon klickar."
+                  </p>
+                  <p className="text-[10px] font-semibold text-zinc-500">Maksim Panov — Grundare, Leadcom</p>
+                </div>
+              </div>
+
+              {/* Investment info */}
+              <div className="flex gap-3 p-4 rounded-lg bg-zinc-100 border border-zinc-200 mb-6">
+                <Info className="w-4 h-4 text-zinc-400 flex-shrink-0 mt-0.5" />
+                <p className="text-xs text-zinc-600 leading-relaxed">
+                  Investeringen ligger i <strong className="text-zinc-800">mellanklassens fyra siffror per månad</strong>. Vi går bara vidare om vi kan garantera minst 5× tillbaka inom ett år. Ingen hård sälj.
+                </p>
+              </div>
+
+              {/* Secondary CTA */}
+              <Button
+                onClick={onProceed}
+                size="lg"
+                className="w-full h-12 bg-accent text-white hover:bg-accent/90 font-semibold"
+              >
+                Jag är redo — boka mitt samtal
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </div>
+          </div>
+
+          {/* Restart */}
+          <div className="text-center pb-2">
+            <button
+              onClick={onRestart}
+              className="text-xs text-muted-foreground/50 hover:text-muted-foreground flex items-center gap-1 mx-auto transition-colors"
+            >
+              <RotateCcw className="w-3 h-3" />
+              Börja om
+            </button>
           </div>
 
         </div>
