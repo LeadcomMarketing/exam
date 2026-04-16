@@ -44,7 +44,7 @@ export function ConfirmView({
       <div className="flex-1 py-8 md:py-12 px-4">
         <div className="w-full max-w-lg mx-auto space-y-4">
 
-          {/* ── Top results card ── */}
+          {/* ── Single continuous card ── */}
           <div className="bg-zinc-50 border border-zinc-200 rounded-xl shadow-lg overflow-hidden">
             <div className="h-1 w-full bg-accent" />
 
@@ -87,11 +87,9 @@ export function ConfirmView({
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </div>
-          </div>
 
-          {/* ── How it works card ── */}
-          <div className="bg-zinc-50 border border-zinc-200 rounded-xl shadow-lg overflow-hidden">
-            <div className="px-6 pt-6 pb-5">
+            {/* ── How it works section (same card, divider) ── */}
+            <div className="border-t border-zinc-200 px-6 pt-6 pb-5">
               <p className="text-[10px] font-semibold tracking-widest text-zinc-400 uppercase mb-3">
                 Så fungerar det
               </p>
