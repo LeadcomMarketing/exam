@@ -80,7 +80,7 @@ export function LandingView({
             <div className="w-px h-7 bg-border" />
             <div className="text-center">
               <p className="text-lg md:text-xl font-bold text-foreground">140 000</p>
-              <p className="text-[9px] uppercase tracking-wider text-muted-foreground mt-0.5">Patienter genererade för<br />våra partnerkliniker</p>
+              <p className="text-[9px] uppercase tracking-wider text-muted-foreground mt-0.5">Patienter genererade</p>
             </div>
             <div className="w-px h-7 bg-border" />
             <div className="text-center">
