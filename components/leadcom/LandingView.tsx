@@ -70,9 +70,6 @@ export function LandingView({
           <p className="mt-2 text-base md:text-lg font-semibold text-foreground text-center">
             Skandinaviens #1 byrå i tandvårdsbranschen
           </p>
-          <p className="mt-0.5 text-sm text-muted-foreground text-center">
-            140 000 patienter genererade för kliniker i Skandinavien
-          </p>
 
           {/* Stats row — below headline, slightly smaller */}
           <div className="flex items-center justify-center gap-6 md:gap-10 mt-4">
@@ -82,8 +79,8 @@ export function LandingView({
             </div>
             <div className="w-px h-7 bg-border" />
             <div className="text-center">
-              <p className="text-lg md:text-xl font-bold text-foreground">42.4</p>
-              <p className="text-[9px] uppercase tracking-wider text-muted-foreground mt-0.5">Nya patienter / mån i snitt</p>
+              <p className="text-lg md:text-xl font-bold text-foreground">140 000</p>
+              <p className="text-[9px] uppercase tracking-wider text-muted-foreground mt-0.5">Patienter genererade för<br />våra partnerkliniker</p>
             </div>
             <div className="w-px h-7 bg-border" />
             <div className="text-center">
