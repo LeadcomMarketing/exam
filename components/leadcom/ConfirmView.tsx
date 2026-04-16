@@ -1,19 +1,19 @@
 'use client'
 
-import { ArrowRight, RotateCcw, ShieldCheck, Clock, RefreshCw, Zap, Sparkles, Info } from 'lucide-react'
+import { ArrowRight, RotateCcw, ShieldCheck, Clock, RefreshCw, Zap, Sparkles } from 'lucide-react'
 import { Button } from '@/components/shared/ui/button'
 import { LeadcomHeader } from './LeadcomHeader'
 
 const features = [
   {
-    icon: Clock,
-    title: 'Svar inom 4 minuter',
-    body: 'Vårt team kontaktar varje lead inom 4 min — kvällar och helger. Ring, sms och WhatsApp tills besöket är bokat.',
+    icon: RefreshCw,
+    title: 'Efter 8 år vet vi vad som fungerar',
+    body: 'Med år av erfarenhet och testande vet vi vilka budskap som fungerar för maximala resultat.',
   },
   {
-    icon: RefreshCw,
-    title: '8-stegs uppföljning',
-    body: 'De flesta patienter bokar inte vid första kontakt. Vi följer upp 8 gånger via sms, mejl och WhatsApp.',
+    icon: Clock,
+    title: 'Effektiv automatisk uppföljning',
+    body: 'Vårt team kontaktar varje lead inom 4 min — kvällar och helger — och vår AI-teknologi bokar effektivt in många lead innan du ens hunnit ringa dem.',
   },
   {
     icon: Zap,
@@ -132,16 +132,8 @@ export function ConfirmView({
                   <p className="text-xs text-zinc-600 italic leading-relaxed mb-2">
                     "Skillnaden mellan en klinik som får 5 nya patienter i månaden och en som får 50 handlar aldrig om annonsbudget. Det handlar alltid om vad som händer efter att någon klickar."
                   </p>
-                  <p className="text-[10px] font-semibold text-zinc-500">Maksim Panov — Grundare, Leadcom</p>
+                  <p className="text-[10px] font-semibold text-zinc-500">Maksim Polupanov — Medgrundare, Leadcom</p>
                 </div>
-              </div>
-
-              {/* Investment info */}
-              <div className="flex gap-3 p-4 rounded-lg bg-zinc-100 border border-zinc-200 mb-6">
-                <Info className="w-4 h-4 text-zinc-400 flex-shrink-0 mt-0.5" />
-                <p className="text-xs text-zinc-600 leading-relaxed">
-                  Investeringen ligger i <strong className="text-zinc-800">mellanklassens fyra siffror per månad</strong>. Vi går bara vidare om vi kan garantera minst 5× tillbaka inom ett år. Ingen hård sälj.
-                </p>
               </div>
 
               {/* Secondary CTA */}
