@@ -23,7 +23,7 @@ const features = [
   {
     icon: Sparkles,
     title: 'Alla högvärdiga behandlingar',
-    body: 'Undersökningar, implantat, estetik, akut — vi anpassar mixen för maximal avkastning på er annonsbudget.',
+    body: 'Undersökningar, implantat, aligners och fasader — vi anpassar mixen för maximal avkastning på er annonsbudget.',
   },
 ]
 
