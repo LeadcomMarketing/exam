@@ -1,15 +1,28 @@
 'use client'
 
 import { useState } from 'react'
-import { ArrowRight, RotateCcw } from 'lucide-react'
+import { ArrowRight, RotateCcw, CheckCircle2 } from 'lucide-react'
 import { Button } from '@/components/shared/ui/button'
 import { Input } from '@/components/shared/ui/input'
 import { LeadcomHeader } from './LeadcomHeader'
-import { TestimonialCard } from './TestimonialCard'
-import { caseTestimonials } from '@/data/leadcom-funnel-data'
+
+const expectations = [
+  {
+    number: '1',
+    text: 'Vi analyserar er klinik, ert område och er nuvarande digitala närvaro innan samtalet.',
+  },
+  {
+    number: '2',
+    text: 'Vi bygger er skräddarsydda anskaffningsplan — vilka behandlingar, annonsbudget och garanterat antal undersökningar.',
+  },
+  {
+    number: '3',
+    text: 'Vi berättar exakt vad som krävs. Kan vi garantera det? Vi visar hur. Kan vi inte? Vi säger det ärligt och går vidare.',
+  },
+]
 
 export function ThankYouView({ onRestart, onSubmit }: { onRestart: () => void; onSubmit: () => void }) {
-  const [form, setForm] = useState({ name: '', clinic: '', phone: '', email: '' })
+  const [form, setForm] = useState({ name: '', email: '', clinic: '', website: '' })
   const [submitting, setSubmitting] = useState(false)
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -18,7 +31,7 @@ export function ThankYouView({ onRestart, onSubmit }: { onRestart: () => void; o
     onSubmit()
   }
 
-  const isValid = form.name.trim() && form.phone.trim() && form.email.trim()
+  const isValid = form.name.trim() && form.email.trim() && form.clinic.trim()
 
   return (
     <main className="w-full min-h-screen flex flex-col">
@@ -27,47 +40,44 @@ export function ThankYouView({ onRestart, onSubmit }: { onRestart: () => void; o
       <div className="flex-1 py-8 md:py-12 px-4">
         <div className="w-full max-w-lg mx-auto space-y-4">
 
-          {/* Main card */}
+          {/* Main form card */}
           <div className="bg-card border border-border rounded-xl shadow-lg overflow-hidden">
 
-            {/* Progress bar — step 7 of 7, almost done */}
-            <div className="px-6 pt-5 pb-4 border-b border-border/40">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-[10px] font-semibold tracking-widest text-muted-foreground uppercase">Steg 7 av 7</span>
-                <span className="text-[10px] font-semibold text-accent">98%</span>
-              </div>
-              <div className="h-1 w-full bg-secondary rounded-full overflow-hidden">
-                <div className="h-full bg-accent rounded-full" style={{ width: '98%' }} />
-              </div>
-            </div>
-
-            <div className="px-6 pt-5 pb-6">
-              <h1 className="text-xl md:text-2xl font-bold text-card-foreground mb-2 leading-snug">
-                Nästan klart — fyll i era uppgifter
-              </h1>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-                Lämna era kontaktuppgifter nedan så hör vi av oss för att boka in nästa steg.
+            <div className="px-6 pt-6 pb-7">
+              {/* Eyebrow */}
+              <p className="text-[10px] font-semibold tracking-widest text-accent uppercase mb-3">
+                Sista steget
               </p>
 
+              {/* Headline */}
+              <h1 className="text-xl md:text-2xl font-bold text-card-foreground leading-snug mb-2">
+                Boka ert kostnadsfria{' '}
+                <em className="not-italic font-extrabold text-accent">analyssamtal</em>
+              </h1>
+
+              <p className="text-sm text-muted-foreground leading-relaxed mb-5">
+                Vi kommer förberedda med en specifik plan för er klinik — anpassad efter ert område, era behandlingar och er kapacitet.
+              </p>
+
+              {/* Exclusivity box */}
+              <div className="flex gap-3 p-4 rounded-lg bg-emerald-950/40 border border-emerald-800/50 mb-6">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-xs font-semibold text-emerald-300 mb-1">
+                    Vi arbetar med max 1 klinik per område
+                  </p>
+                  <p className="text-xs text-emerald-100/70 leading-relaxed">
+                    För att skydda era konkurrensfördelar tecknar vi ett exklusivitetsavtal för ert upptagningsområde. När en klinik i ert område är ombord tar vi inte på oss en konkurrent. Platser är begränsade.
+                  </p>
+                </div>
+              </div>
+
+              {/* Form */}
               <form onSubmit={handleSubmit} className="space-y-3">
                 <Input
-                  placeholder="Namn"
+                  placeholder="Ert namn"
                   value={form.name}
                   onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
-                  required
-                  className="h-12 bg-zinc-700 border-zinc-600 text-zinc-50 placeholder:text-zinc-400 focus-visible:ring-accent/50"
-                />
-                <Input
-                  placeholder="Kliniknamn (valfritt)"
-                  value={form.clinic}
-                  onChange={e => setForm(f => ({ ...f, clinic: e.target.value }))}
-                  className="h-12 bg-zinc-700 border-zinc-600 text-zinc-50 placeholder:text-zinc-400 focus-visible:ring-accent/50"
-                />
-                <Input
-                  type="tel"
-                  placeholder="Telefonnummer"
-                  value={form.phone}
-                  onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
                   required
                   className="h-12 bg-zinc-700 border-zinc-600 text-zinc-50 placeholder:text-zinc-400 focus-visible:ring-accent/50"
                 />
@@ -79,6 +89,25 @@ export function ThankYouView({ onRestart, onSubmit }: { onRestart: () => void; o
                   required
                   className="h-12 bg-zinc-700 border-zinc-600 text-zinc-50 placeholder:text-zinc-400 focus-visible:ring-accent/50"
                 />
+                <Input
+                  placeholder="Klinikens namn"
+                  value={form.clinic}
+                  onChange={e => setForm(f => ({ ...f, clinic: e.target.value }))}
+                  required
+                  className="h-12 bg-zinc-700 border-zinc-600 text-zinc-50 placeholder:text-zinc-400 focus-visible:ring-accent/50"
+                />
+                <div>
+                  <Input
+                    type="url"
+                    placeholder="Klinikens webbplats (valfritt)"
+                    value={form.website}
+                    onChange={e => setForm(f => ({ ...f, website: e.target.value }))}
+                    className="h-12 bg-zinc-700 border-zinc-600 text-zinc-50 placeholder:text-zinc-400 focus-visible:ring-accent/50"
+                  />
+                  <p className="text-[10px] text-muted-foreground/60 mt-1.5 px-1">
+                    Hjälper oss granska er nuvarande närvaro innan samtalet
+                  </p>
+                </div>
 
                 <Button
                   type="submit"
@@ -88,14 +117,18 @@ export function ThankYouView({ onRestart, onSubmit }: { onRestart: () => void; o
                 >
                   {submitting ? 'Skickar…' : (
                     <>
-                      Fortsätt
+                      Boka mitt analyssamtal
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </>
                   )}
                 </Button>
+
+                <p className="text-[10px] text-muted-foreground/50 text-center pt-1">
+                  Ingen spam. Ingen bindning. Vi kommer förberedda med er specifika plan.
+                </p>
               </form>
 
-              <div className="mt-4 text-center">
+              <div className="mt-5 text-center">
                 <button
                   onClick={onRestart}
                   className="text-xs text-muted-foreground/50 hover:text-muted-foreground flex items-center gap-1 mx-auto transition-colors"
@@ -105,34 +138,32 @@ export function ThankYouView({ onRestart, onSubmit }: { onRestart: () => void; o
                 </button>
               </div>
             </div>
-          </div>
 
-          {/* Testimonials as social proof */}
-          <div className="space-y-4">
-            {caseTestimonials.map((t) => (
-              <TestimonialCard
-                key={t.logoAlt}
-                logoSrc={t.logoSrc}
-                logoAlt={t.logoAlt}
-                photoSrc={t.photoSrc}
-                photoAlt={t.photoAlt}
-                photoWidth={t.photoWidth}
-                photoHeight={t.photoHeight}
-                logoInvertInLight={t.logoInvertInLight}
-              >
-                {t.prefix}
-                <strong>{t.boldPart}</strong>
-                {t.middle}
-                <strong className="text-accent">{t.accentPart}</strong>
-              </TestimonialCard>
-            ))}
+            {/* What to expect section */}
+            <div className="border-t border-border/40 px-6 py-5">
+              <p className="text-[9px] font-semibold tracking-widest text-muted-foreground uppercase mb-4">
+                Vad ni kan förvänta er på samtalet
+              </p>
+              <div className="space-y-4">
+                {expectations.map((item) => (
+                  <div key={item.number} className="flex gap-3">
+                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-accent/15 border border-accent/30 flex items-center justify-center text-[10px] font-bold text-accent">
+                      {item.number}
+                    </span>
+                    <p className="text-xs text-muted-foreground leading-relaxed pt-0.5">
+                      {item.text}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
         </div>
       </div>
 
       <footer className="py-6 px-4 border-t border-border/30">
-        <p className="text-[11px] text-muted-foreground text-center">
+        <p className="text-[11px] text-muted-foreground/60 text-center">
           Leadcom — Datadriven patientanskaffning för tandkliniker
         </p>
       </footer>
