@@ -85,7 +85,7 @@ export function LandingView({
             <div className="w-px h-7 bg-border" />
             <div className="text-center">
               <p className="text-lg md:text-xl font-bold text-foreground">1 vecka</p>
-              <p className="text-[9px] uppercase tracking-wider text-muted-foreground mt-0.5">Tid till första patient</p>
+              <p className="text-[9px] uppercase tracking-wider text-muted-foreground mt-0.5">Tid till din första patient</p>
             </div>
           </div>
         </div>
