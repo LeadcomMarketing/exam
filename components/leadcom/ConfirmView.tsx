@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
+import Image from 'next/image'
 import { ArrowRight, RotateCcw, ShieldCheck, Clock, RefreshCw, Zap, Sparkles } from 'lucide-react'
 import { Button } from '@/components/shared/ui/button'
 import { LeadcomHeader } from './LeadcomHeader'
@@ -13,8 +14,8 @@ const features = [
   },
   {
     icon: Clock,
-    title: 'Effektiv automatisk uppföljning',
-    body: 'Vår AI-teknologi kontaktar automatiskt varje potentiell patient inom 3 minuter – även kvällar och helger. Ofta bokar den in patienter innan du ens hunnit ringa upp.',
+    title: 'Kvalitet över kvantitet',
+    body: 'Vi "filtrerar" aktivt bort leads som inte är seriösa genom att kvalificera dem längs vägen - innan de når er.',
   },
   {
     icon: Zap,
@@ -135,7 +136,18 @@ export function ConfirmView({
                   "Among the many marketing agencies I have used, Leadcom is by far the best. They have a wonderful determination and a clear plan/goal with their marketing and manage to deliver good results time and time again. I can highly recommend them!"
                 </p>
                 <div className="flex items-center justify-between">
-                  <p className="text-[11px] font-semibold text-zinc-600">Wuba Kassahun</p>
+                  <div className="flex items-center gap-2">
+                    <div className="w-6 h-6 rounded-full overflow-hidden bg-zinc-300 flex-shrink-0">
+                      <Image
+                        src="/static/images/testimonials/wuba.png.png"
+                        alt="Wuba Kassahun"
+                        width={24}
+                        height={24}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <p className="text-[11px] font-semibold text-zinc-600">Wuba Kassahun</p>
+                  </div>
                   <div className="flex items-center gap-1.5 text-[10px] text-zinc-400">
                     <span>Recension på</span>
                     <svg className="w-3.5 h-3.5 flex-shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
