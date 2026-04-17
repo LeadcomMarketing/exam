@@ -13,27 +13,25 @@ export function CaseStudyPanel({
 }) {
   return (
     <div className="rounded-lg border border-zinc-200 bg-zinc-50 overflow-hidden">
-      <div className="flex gap-0">
-        {/* Image — left half */}
-        <div className="relative w-28 flex-shrink-0">
-          <Image
-            src={imageSrc}
-            alt={imageAlt}
-            fill
-            sizes="112px"
-            className="object-cover object-center"
-          />
-        </div>
+      {/* Image — full width, fixed aspect ratio, no cropping surprises */}
+      <div className="relative w-full aspect-[16/7]">
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          fill
+          sizes="(max-width: 512px) 100vw, 512px"
+          className="object-cover object-top"
+        />
+      </div>
 
-        {/* Text — right half */}
-        <div className="flex-1 p-4">
-          <p className="text-[9px] font-semibold tracking-widest text-accent uppercase mb-1.5">
-            {clinic}
-          </p>
-          <p className="text-xs text-zinc-700 leading-relaxed">
-            {quote}
-          </p>
-        </div>
+      {/* Text */}
+      <div className="px-4 py-3">
+        <p className="text-[9px] font-semibold tracking-widest text-accent uppercase mb-1.5">
+          {clinic}
+        </p>
+        <p className="text-xs text-zinc-700 leading-relaxed">
+          {quote}
+        </p>
       </div>
     </div>
   )
