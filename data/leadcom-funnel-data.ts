@@ -55,10 +55,10 @@ export const funnelSteps: FunnelStep[] = [
     title: 'Hur stor andel av era bokade undersökningar blir faktiskt patienter hos er?',
     supportText: 'Av de nya som bokar tid — hur många går vidare till behandling och återkommande vård?',
     options: [
-      { label: 'Under 20 %' },
-      { label: '20–40 %' },
-      { label: '40–60 %' },
-      { label: '60 % eller mer' },
+      { label: 'Under 20%' },
+      { label: '20–50%' },
+      { label: '50–90%' },
+      { label: '90% eller fler' },
     ],
     insightPanel: {
       title: 'KONVERTERING AVGÖR',
