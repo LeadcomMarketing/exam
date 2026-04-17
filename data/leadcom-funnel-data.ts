@@ -34,10 +34,10 @@ export const funnelSteps: FunnelStep[] = [
     title: 'Hur många nya undersökningsbokningar per månad vill ni få in?',
     supportText: 'Tänk nya patienter som ännu inte har varit hos er tidigare.',
     options: [
-      { label: '5–10 nya undersökningar / månad' },
-      { label: '10–20 nya undersökningar / månad' },
-      { label: '20–30 nya undersökningar / månad' },
-      { label: '30+ nya undersökningar / månad' },
+      { label: '10–30 nya undersökningar / månad' },
+      { label: '30–60 nya undersökningar / månad' },
+      { label: '60–100 nya undersökningar / månad' },
+      { label: '100+ nya undersökningar / månad' },
     ],
     insightPanel: {
       title: 'GENOMSNITTLIGT PATIENTVÄRDE',
