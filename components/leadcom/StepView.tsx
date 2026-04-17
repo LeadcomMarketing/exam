@@ -82,6 +82,8 @@ export function StepView({
               <Testimonial
                 quote={step.testimonial.quote}
                 initials={step.testimonial.initials}
+                name={step.testimonial.name}
+                photoSrc={step.testimonial.photoSrc}
                 role={step.testimonial.role}
                 highlight={step.testimonial.highlight}
               />

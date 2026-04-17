@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Lightbulb, CheckCircle2 } from 'lucide-react'
 
 export function InsightPanel({ title, body, light = false }: { title: string; body: string; light?: boolean }) {
@@ -33,11 +34,15 @@ export function GreenPanel({ title, body, light = false }: { title: string; body
 export function Testimonial({
   quote,
   initials,
+  name,
+  photoSrc,
   role,
   highlight,
 }: {
   quote: string
   initials: string
+  name?: string
+  photoSrc?: string
   role: string
   highlight: string
 }) {
@@ -45,11 +50,16 @@ export function Testimonial({
     <div className="p-4 rounded-lg bg-zinc-100 border border-zinc-200">
       <p className="text-sm text-zinc-700 italic leading-relaxed">&ldquo;{quote}&rdquo;</p>
       <div className="mt-3 flex items-center gap-2">
-        <div className="w-8 h-8 rounded-full bg-zinc-200 flex items-center justify-center">
-          <span className="text-xs font-medium text-zinc-600">{initials}</span>
+        <div className="w-8 h-8 rounded-full bg-zinc-300 flex-shrink-0 overflow-hidden flex items-center justify-center">
+          {photoSrc ? (
+            <Image src={photoSrc} alt={name ?? initials} width={32} height={32} className="w-full h-full object-cover" />
+          ) : (
+            <span className="text-xs font-medium text-zinc-600">{initials}</span>
+          )}
         </div>
         <div>
-          <p className="text-xs font-medium text-zinc-700">{role}</p>
+          {name && <p className="text-xs font-semibold text-zinc-800">{name}</p>}
+          <p className="text-xs font-medium text-zinc-500">{role}</p>
           <p className="text-[10px] text-accent">{highlight}</p>
         </div>
       </div>

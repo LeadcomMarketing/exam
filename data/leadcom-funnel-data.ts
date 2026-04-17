@@ -4,7 +4,7 @@ export interface FunnelStep {
   supportText: string
   options: { label: string; outcome?: 'continue' | 'disqualify' }[]
   insightPanel?: { title: string; body: string }
-  testimonial?: { quote: string; initials: string; role: string; highlight: string }
+  testimonial?: { quote: string; initials: string; name?: string; photoSrc?: string; role: string; highlight: string }
   caseStudy?: { imageSrc: string; imageAlt: string; quote: string; clinic: string }
   showGreenPanel?: boolean
   greenPanelTitle?: string
@@ -67,7 +67,9 @@ export const funnelSteps: FunnelStep[] = [
     testimonial: {
       quote: 'Vi startade fredagen den 1 november. När vi kom in på måndagen hade vi fått 36 leads … Det var helt kaotiskt! Vi var tvungna att pausa kampanjen, få kontroll igen och därefter fortsätta.',
       initials: 'JK',
-      role: 'Klinikägare, Stockholm',
+      name: 'Dr Jonny Kassawo',
+      photoSrc: '/static/images/testimonials/jonny.png',
+      role: 'Klinikägare, Östersund',
       highlight: '36 leads på en helg',
     },
   },
