@@ -8,7 +8,7 @@ import { ProgressHeader } from './ProgressHeader'
 
 const stats = [
   { label: 'Nya undersökningar / månad', sub: 'garanterat', value: '40+', accent: false },
-  { label: 'Genomsnittlig stängningsgrad', sub: null, value: '70%', accent: false },
+  { label: 'Genomsnittlig bokningsprocent', sub: null, value: '70%', accent: false },
   { label: 'Nya patienter / månad', sub: null, value: '28', accent: false },
   { label: 'Uppskattat patientvärde (LTV)', sub: null, value: '~175 000 kr', accent: true },
 ]
