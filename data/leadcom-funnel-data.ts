@@ -137,12 +137,10 @@ export const funnelSteps: FunnelStep[] = [
 export const TOTAL_FUNNEL_STEPS = funnelSteps.length
 
 export const serviceCategories = [
-  'Nya patientundersökningar',
-  'Akuta besök',
-  'Allmän tandvård',
-  'Implantat',
-  'Estetiska behandlingar',
-  'Hygienbesök',
+  'Exam',
+  'Aligners',
+  'Implants',
+  'Veneers',
 ]
 
 export const clinicLogos = [
