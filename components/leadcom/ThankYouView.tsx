@@ -67,11 +67,8 @@ export function ThankYouView({ onRestart, onSubmit }: { onRestart: () => void; o
               <div className="flex gap-3 p-4 rounded-lg bg-emerald-50 border border-emerald-200 mb-6">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-xs font-semibold text-emerald-800 mb-1">
-                    Vi arbetar med max 1 klinik per område
-                  </p>
                   <p className="text-xs text-emerald-700 leading-relaxed">
-                    För att skydda era konkurrensfördelar tecknar vi ett exklusivitetsavtal för ert upptagningsområde. När en klinik i ert område är ombord tar vi inte på oss en konkurrent. Platser är begränsade.
+                    Vi jobbar endast med ett begränsat antal kliniker per område. Platser är begränsade.
                   </p>
                 </div>
               </div>
