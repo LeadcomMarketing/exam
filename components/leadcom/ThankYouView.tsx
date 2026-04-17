@@ -68,7 +68,7 @@ export function ThankYouView({ onRestart, onSubmit }: { onRestart: () => void; o
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="text-xs text-emerald-700 leading-relaxed">
-                    Vi jobbar endast med ett begränsat antal kliniker per område. Platser är begränsade.
+                    Vi jobbar endast med ett begränsat antal kliniker per område.
                   </p>
                 </div>
               </div>
