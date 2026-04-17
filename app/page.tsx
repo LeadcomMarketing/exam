@@ -8,6 +8,7 @@ import { DisqualifiedView } from '@/components/leadcom/DisqualifiedView'
 import { ThankYouView } from '@/components/leadcom/ThankYouView'
 import { ConfirmView } from '@/components/leadcom/ConfirmView'
 import { BookingView } from '@/components/leadcom/BookingView'
+import { ClosingStepView } from '@/components/leadcom/ClosingStepView'
 
 type ViewState = 'landing' | 'step' | 'disqualified' | 'thankyou' | 'confirm' | 'booking'
 
@@ -59,6 +60,10 @@ export default function LeadcomFunnel() {
 
   if (view === 'booking') {
     return <BookingView onRestart={handleRestart} />
+  }
+
+  if (currentStepIndex === funnelSteps.length - 1) {
+    return <ClosingStepView onProceed={handleNext} onBack={handleBack} onDisqualify={() => setView('disqualified')} />
   }
 
   return <StepView key={currentStepIndex} stepIndex={currentStepIndex} onNext={handleNext} onBack={handleBack} onDisqualify={() => setView('disqualified')} />
