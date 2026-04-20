@@ -6,6 +6,7 @@ export interface FunnelStep {
   insightPanel?: { title: string; body: string }
   testimonial?: { quote: string; initials: string; name?: string; photoSrc?: string; role: string; highlight: string }
   caseStudy?: { imageSrc: string; imageAlt: string; quote: string; clinic: string }
+  googleReview?: { quote: string; name: string; photoSrc: string }
   showGreenPanel?: boolean
   greenPanelTitle?: string
   greenPanelBody?: string
@@ -43,11 +44,10 @@ export const funnelSteps: FunnelStep[] = [
       title: 'GENOMSNITTLIGT PATIENTVÄRDE',
       body: 'En ny undersökning kan leda till behandlingar värda 15 000–50 000 kr över tid. Rätt volym gör skillnad.',
     },
-    caseStudy: {
-      imageSrc: '/static/images/testimonials/darya-interview.png',
-      imageAlt: 'Darya Bassari — Clear Tannlegesenter',
-      quote: 'En tillväxtresa i en klass för sig: Daryas klinik ökade från 15,9 till 76,4 miljoner på fyra år med hjälp av Leadcom.',
-      clinic: 'Clear Tannlegesenter',
+    googleReview: {
+      quote: 'Among the many marketing agencies I have used, Leadcom is by far the best. They have a wonderful determination and a clear plan/goal with their marketing and manage to deliver good results time and time again. I can highly recommend them!',
+      name: 'Wuba Kassahun',
+      photoSrc: '/static/images/testimonials/wuba.png.png',
     },
   },
   {
