@@ -89,8 +89,18 @@ export function ConfirmView({
               </Button>
             </div>
 
+            {/* ── Case study (below first CTA) ── */}
+            <div className="border-t border-zinc-200 px-6 pt-5 pb-0">
+              <CaseStudyPanel
+                imageSrc="/static/images/testimonials/darya-interview.png"
+                imageAlt="Darya Bassari — Clear Tannlegesenter"
+                quote="En tillväxtresa i en klass för sig: Daryas klinik ökade från 15,9 till 76,4 miljoner på fyra år med hjälp av Leadcom."
+                clinic="Clear Tannlegesenter"
+              />
+            </div>
+
             {/* ── How it works section (same card, divider) ── */}
-            <div className="border-t border-zinc-200 px-6 pt-6 pb-5">
+            <div className="border-t border-zinc-200 px-6 pt-6 pb-5 mt-5">
               <p className="text-[10px] font-semibold tracking-widest text-zinc-400 uppercase mb-3">
                 Så fungerar det
               </p>
@@ -125,15 +135,7 @@ export function ConfirmView({
                 ))}
               </div>
 
-              {/* Case study */}
-              <div className="mb-5">
-                <CaseStudyPanel
-                  imageSrc="/static/images/testimonials/darya-interview.png"
-                  imageAlt="Darya Bassari — Clear Tannlegesenter"
-                  quote="En tillväxtresa i en klass för sig: Daryas klinik ökade från 15,9 till 76,4 miljoner på fyra år med hjälp av Leadcom."
-                  clinic="Clear Tannlegesenter"
-                />
-              </div>
+
 
               {/* Secondary CTA */}
               <Button
