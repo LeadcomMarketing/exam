@@ -7,6 +7,7 @@ export interface FunnelStep {
   testimonial?: { quote: string; initials: string; name?: string; photoSrc?: string; role: string; highlight: string }
   caseStudy?: { imageSrc: string; imageAlt: string; quote: string; clinic: string }
   googleReview?: { quote: string; name: string; photoSrc: string }
+  slider?: { min: number; max: number; step: number; defaultValue: number }
   showGreenPanel?: boolean
   greenPanelTitle?: string
   greenPanelBody?: string
@@ -32,14 +33,10 @@ export const funnelSteps: FunnelStep[] = [
   },
   {
     step: 2,
-    title: 'Hur många nya undersökningsbokningar per månad vill ni få in?',
+    title: 'Hur många nya undersökningsbokningar per månad vill ni få in? (välj ett ungefärligt antal)',
     supportText: 'Tänk nya patienter som ännu inte har varit hos er tidigare.',
-    options: [
-      { label: '10–30 nya undersökningar / månad' },
-      { label: '30–60 nya undersökningar / månad' },
-      { label: '60–100 nya undersökningar / månad' },
-      { label: '100+ nya undersökningar / månad' },
-    ],
+    options: [],
+    slider: { min: 5, max: 150, step: 5, defaultValue: 30 },
     insightPanel: {
       title: 'GENOMSNITTLIGT PATIENTVÄRDE',
       body: 'En ny undersökning kan leda till behandlingar värda 15 000–50 000 kr över tid. Rätt volym gör skillnad.',

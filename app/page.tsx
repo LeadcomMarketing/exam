@@ -69,8 +69,8 @@ export default function LeadcomFunnel() {
     return <BookingView onRestart={handleRestart} />
   }
 
-  // Step 2 is at funnelSteps index 1; default to option index 0 if unanswered
-  const step2Answer = answers[1] ?? 0
+  // Step 2 is at funnelSteps index 1; default to slider default if unanswered
+  const step2Answer = answers[1] ?? 30
 
   if (currentStepIndex === funnelSteps.length - 1) {
     return (

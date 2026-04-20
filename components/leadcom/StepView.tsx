@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/shared/ui/button'
+import { Slider } from '@/components/shared/ui/slider'
 import { funnelSteps, optionMarkers } from '@/data/leadcom-funnel-data'
 import { LeadcomHeader } from './LeadcomHeader'
 import { ProgressHeader } from './ProgressHeader'
@@ -22,10 +23,11 @@ export function StepView({
   onNext: () => void
   onBack: () => void
   onDisqualify: () => void
-  onAnswer?: (stepIndex: number, optionIndex: number) => void
+  onAnswer?: (stepIndex: number, value: number) => void
 }) {
-  const [selected, setSelected] = useState<number | null>(null)
   const step = funnelSteps[stepIndex]
+  const [selected, setSelected] = useState<number | null>(null)
+  const [sliderValue, setSliderValue] = useState<number>(step.slider?.defaultValue ?? 30)
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' })
@@ -44,6 +46,11 @@ export function StepView({
     }, 300)
   }
 
+  const handleSliderContinue = () => {
+    onAnswer?.(stepIndex, sliderValue)
+    onNext()
+  }
+
   return (
     <main className="w-full min-h-screen flex flex-col">
       <LeadcomHeader />
@@ -57,18 +64,55 @@ export function StepView({
             <p className="mt-2 text-sm text-zinc-500">{step.supportText}</p>
           </div>
 
-          <div className="px-5 pb-4 space-y-3">
-            {step.options.map((option, i) => (
-              <FunnelOption
-                key={option.label}
-                label={option.label}
-                marker={optionMarkers[i]}
-                isSelected={selected === i}
-                onClick={() => handleSelect(i)}
-                large
-              />
-            ))}
-          </div>
+          {/* ── Slider variant ── */}
+          {step.slider ? (
+            <div className="px-5 pb-5">
+              {/* Current value display */}
+              <div className="bg-white border border-zinc-200 rounded-xl p-5 mb-5 text-center shadow-sm">
+                <p className="text-4xl font-extrabold text-zinc-900 tabular-nums">{sliderValue}</p>
+                <p className="text-sm text-zinc-500 mt-1">undersökningar / månad</p>
+              </div>
+
+              {/* Slider */}
+              <div className="px-1 mb-2">
+                <Slider
+                  min={step.slider.min}
+                  max={step.slider.max}
+                  step={step.slider.step}
+                  value={[sliderValue]}
+                  onValueChange={([val]) => setSliderValue(val)}
+                  className="[&_[data-radix-slider-track]]:bg-zinc-200 [&_[data-radix-slider-range]]:bg-accent [&_[data-radix-slider-thumb]]:border-accent [&_[data-radix-slider-thumb]]:w-6 [&_[data-radix-slider-thumb]]:h-6"
+                />
+              </div>
+              <div className="flex justify-between text-[11px] text-zinc-400 mb-6 px-1">
+                <span>{step.slider.min}</span>
+                <span>{step.slider.max}+</span>
+              </div>
+
+              <Button
+                onClick={handleSliderContinue}
+                size="lg"
+                className="w-full h-12 bg-accent text-white hover:bg-accent/90 font-semibold"
+              >
+                Fortsätt
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </div>
+          ) : (
+            /* ── Option list variant ── */
+            <div className="px-5 pb-4 space-y-3">
+              {step.options.map((option, i) => (
+                <FunnelOption
+                  key={option.label}
+                  label={option.label}
+                  marker={optionMarkers[i]}
+                  isSelected={selected === i}
+                  onClick={() => handleSelect(i)}
+                  large
+                />
+              ))}
+            </div>
+          )}
 
           {step.caseStudy && (
             <div className="px-5 pb-4">
