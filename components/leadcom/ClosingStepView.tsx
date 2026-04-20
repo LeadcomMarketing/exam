@@ -58,7 +58,7 @@ export function ClosingStepView({
   const s = STATS_BY_ANSWER[step2Answer] ?? STATS_BY_ANSWER[0]
 
   const stats = [
-    { label: 'Nya undersökningar / månad', sub: 'garanterat', value: s.undersökningar, accent: false },
+    { label: 'Antal förfrågningar / leads', sub: 'garanterat', value: s.undersökningar, accent: false },
     { label: 'Genomsnittlig bokningsprocent', sub: null,         value: '70%',            accent: false },
     { label: 'Nya patienter / månad',        sub: null,         value: s.patienter,      accent: false },
     { label: 'Annonseringskostnad',           sub: 'per månad', value: s.annonskostnad,  accent: false },
