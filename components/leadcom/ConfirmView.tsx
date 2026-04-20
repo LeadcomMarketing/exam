@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
+import { motion } from 'framer-motion'
 import { ArrowRight, RotateCcw, ShieldCheck, Clock, RefreshCw, Zap, Sparkles } from 'lucide-react'
 import { Button } from '@/components/shared/ui/button'
 import { LeadcomHeader } from './LeadcomHeader'
@@ -29,6 +30,12 @@ const features = [
   },
 ]
 
+// Reusable fade-drop variant
+const drop = (delay: number) => ({
+  hidden: { opacity: 0, y: -14 },
+  show:   { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1], delay } },
+})
+
 export function ConfirmView({
   onProceed,
   onRestart,
@@ -46,24 +53,33 @@ export function ConfirmView({
         <div className="w-full max-w-lg mx-auto space-y-4">
 
           {/* ── Single continuous card ── */}
-          <div className="bg-zinc-50 border border-zinc-200 rounded-xl shadow-lg overflow-hidden">
+          <motion.div
+            variants={drop(0)}
+            initial="hidden"
+            animate="show"
+            className="bg-zinc-50 border border-zinc-200 rounded-xl shadow-lg overflow-hidden"
+          >
             <div className="h-1 w-full bg-accent" />
 
             <div className="p-6 md:p-8">
-              <p className="text-[10px] font-semibold tracking-widest text-accent uppercase mb-4">
+              <motion.p variants={drop(0.05)} initial="hidden" animate="show"
+                className="text-[10px] font-semibold tracking-widest text-accent uppercase mb-4">
                 Perfekt — ni passar
-              </p>
+              </motion.p>
 
-              <h1 className="text-xl md:text-2xl font-bold text-zinc-900 leading-snug mb-3 text-balance">
+              <motion.h1 variants={drop(0.12)} initial="hidden" animate="show"
+                className="text-xl md:text-2xl font-bold text-zinc-900 leading-snug mb-3 text-balance">
                 Baserat på era svar kan vi leverera ett förutsägbart flöde av nya patienter
-              </h1>
+              </motion.h1>
 
-              <p className="text-sm text-zinc-500 leading-relaxed mb-6">
+              <motion.p variants={drop(0.19)} initial="hidden" animate="show"
+                className="text-sm text-zinc-500 leading-relaxed mb-6">
                 Nästa steg: fyll i era kontaktuppgifter så bokar vi in ett kort samtal — utan förpliktelse — för att visa exakt vad vi kan göra för er klinik.
-              </p>
+              </motion.p>
 
               {/* Stat pills */}
-              <div className="grid grid-cols-3 gap-3 mb-6">
+              <motion.div variants={drop(0.27)} initial="hidden" animate="show"
+                className="grid grid-cols-3 gap-3 mb-6">
                 <div className="bg-white border border-zinc-200 rounded-lg p-3 text-center shadow-sm">
                   <p className="text-base font-bold text-zinc-900">20–50</p>
                   <p className="text-[9px] uppercase tracking-wider text-zinc-500 mt-0.5">Nya patienter / mån</p>
@@ -76,40 +92,46 @@ export function ConfirmView({
                   <p className="text-base font-bold text-zinc-900">1 vecka</p>
                   <p className="text-[9px] uppercase tracking-wider text-zinc-500 mt-0.5">Till första patient</p>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Primary CTA */}
-              <Button
-                onClick={onProceed}
-                size="lg"
-                className="w-full h-12 bg-accent text-white hover:bg-accent/90 font-semibold"
-              >
-                Fortsätt — boka gratis samtal
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
+              <motion.div variants={drop(0.34)} initial="hidden" animate="show">
+                <Button
+                  onClick={onProceed}
+                  size="lg"
+                  className="w-full h-12 bg-accent text-white hover:bg-accent/90 font-semibold"
+                >
+                  Fortsätt — boka gratis samtal
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </motion.div>
             </div>
 
             {/* ── Case study (below first CTA) ── */}
-            <div className="border-t border-zinc-200 px-6 pt-5 pb-0">
+            <motion.div variants={drop(0.42)} initial="hidden" animate="show"
+              className="border-t border-zinc-200 px-6 pt-5 pb-0">
               <CaseStudyPanel
                 imageSrc="/static/images/testimonials/darya-interview.png"
                 imageAlt="Darya Bassari — Clear Tannlegesenter"
                 quote="En tillväxtresa i en klass för sig: Daryas klinik ökade från 15,9 till 76,4 miljoner på fyra år med hjälp av Leadcom."
                 clinic="Clear Tannlegesenter"
               />
-            </div>
+            </motion.div>
 
-            {/* ── How it works section (same card, divider) ── */}
+            {/* ── How it works section ── */}
             <div className="border-t border-zinc-200 px-6 pt-6 pb-5 mt-5">
-              <p className="text-[10px] font-semibold tracking-widest text-zinc-400 uppercase mb-3">
+              <motion.p variants={drop(0.50)} initial="hidden" animate="show"
+                className="text-[10px] font-semibold tracking-widest text-zinc-400 uppercase mb-3">
                 Så fungerar det
-              </p>
-              <h2 className="text-lg md:text-xl font-bold text-zinc-900 leading-snug mb-5">
+              </motion.p>
+              <motion.h2 variants={drop(0.56)} initial="hidden" animate="show"
+                className="text-lg md:text-xl font-bold text-zinc-900 leading-snug mb-5">
                 Därför kan vi <em className="not-italic text-accent font-extrabold">garantera</em> resultat
-              </h2>
+              </motion.h2>
 
               {/* Guarantee box */}
-              <div className="flex gap-3 p-4 rounded-lg bg-emerald-50 border border-emerald-200 mb-5">
+              <motion.div variants={drop(0.63)} initial="hidden" animate="show"
+                className="flex gap-3 p-4 rounded-lg bg-emerald-50 border border-emerald-200 mb-5">
                 <ShieldCheck className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="text-xs font-semibold text-emerald-800 mb-1 uppercase tracking-wide">
@@ -122,35 +144,42 @@ export function ConfirmView({
                     Vi tar bara på oss kliniker där vi är säkra på att vi kan leverera. Om vi inte når det avtalade antalet bokade undersökningar, pausar vi alla kostnader tills vi kommer ikapp.
                   </p>
                 </div>
-              </div>
+              </motion.div>
 
-              {/* Feature grid */}
+              {/* Feature grid — each tile staggers in */}
               <div className="grid grid-cols-2 gap-3 mb-5">
-                {features.map((f) => (
-                  <div key={f.title} className="bg-white border border-zinc-200 rounded-lg p-4 shadow-sm">
+                {features.map((f, i) => (
+                  <motion.div
+                    key={f.title}
+                    variants={drop(0.70 + i * 0.08)}
+                    initial="hidden"
+                    animate="show"
+                    className="bg-white border border-zinc-200 rounded-lg p-4 shadow-sm"
+                  >
                     <f.icon className="w-4 h-4 text-accent mb-2" />
                     <p className="text-xs font-semibold text-zinc-900 mb-1 leading-snug">{f.title}</p>
                     <p className="text-[11px] text-zinc-500 leading-relaxed">{f.body}</p>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
 
-
-
               {/* Secondary CTA */}
-              <Button
-                onClick={onProceed}
-                size="lg"
-                className="w-full h-12 bg-accent text-white hover:bg-accent/90 font-semibold"
-              >
-                Jag är redo — boka mitt samtal
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
+              <motion.div variants={drop(1.02)} initial="hidden" animate="show">
+                <Button
+                  onClick={onProceed}
+                  size="lg"
+                  className="w-full h-12 bg-accent text-white hover:bg-accent/90 font-semibold"
+                >
+                  Jag är redo — boka mitt samtal
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Restart */}
-          <div className="text-center pb-2">
+          <motion.div variants={drop(1.08)} initial="hidden" animate="show"
+            className="text-center pb-2">
             <button
               onClick={onRestart}
               className="text-xs text-muted-foreground/50 hover:text-muted-foreground flex items-center gap-1 mx-auto transition-colors"
@@ -158,7 +187,7 @@ export function ConfirmView({
               <RotateCcw className="w-3 h-3" />
               Börja om
             </button>
-          </div>
+          </motion.div>
 
         </div>
       </div>
