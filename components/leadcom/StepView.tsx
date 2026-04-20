@@ -16,11 +16,13 @@ export function StepView({
   onNext,
   onBack,
   onDisqualify,
+  onAnswer,
 }: {
   stepIndex: number
   onNext: () => void
   onBack: () => void
   onDisqualify: () => void
+  onAnswer?: (stepIndex: number, optionIndex: number) => void
 }) {
   const [selected, setSelected] = useState<number | null>(null)
   const step = funnelSteps[stepIndex]
@@ -31,6 +33,7 @@ export function StepView({
 
   const handleSelect = (index: number) => {
     setSelected(index)
+    onAnswer?.(stepIndex, index)
     const option = step.options[index]
     setTimeout(() => {
       if (option.outcome === 'disqualify') {

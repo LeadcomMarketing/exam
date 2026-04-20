@@ -6,23 +6,64 @@ import { Button } from '@/components/shared/ui/button'
 import { LeadcomHeader } from './LeadcomHeader'
 import { ProgressHeader } from './ProgressHeader'
 
-const stats = [
-  { label: 'Nya undersökningar / månad', sub: 'garanterat', value: '40+', accent: false },
-  { label: 'Genomsnittlig bokningsprocent', sub: null, value: '70%', accent: false },
-  { label: 'Nya patienter / månad', sub: null, value: '28', accent: false },
-  { label: 'Uppskattat patientvärde (LTV)', sub: null, value: '~175 000 kr', accent: true },
-]
+// Lookup table indexed by step 2 option (0–3)
+// Formula:
+//   undersökningar = patients / 0.70  (rounded to nearest whole)
+//   annonskostnad  = undersökningar × 200 kr
+//   patientvärde   = patients × 3 750 kr
+const STATS_BY_ANSWER = [
+  // Option 0: 10–30 nya undersökningar / månad
+  {
+    patienter:      '10–30',
+    undersökningar: '14–43',
+    annonskostnad:  '~2 800–8 600 kr',
+    patientvärde:   '~37 500–112 500 kr',
+  },
+  // Option 1: 30–60
+  {
+    patienter:      '30–60',
+    undersökningar: '43–86',
+    annonskostnad:  '~8 600–17 200 kr',
+    patientvärde:   '~112 500–225 000 kr',
+  },
+  // Option 2: 60–100
+  {
+    patienter:      '60–100',
+    undersökningar: '86–143',
+    annonskostnad:  '~17 200–28 600 kr',
+    patientvärde:   '~225 000–375 000 kr',
+  },
+  // Option 3: 100+
+  {
+    patienter:      '100+',
+    undersökningar: '143+',
+    annonskostnad:  '~28 600+ kr',
+    patientvärde:   '~375 000+ kr',
+  },
+] as const
 
 export function ClosingStepView({
   onProceed,
   onBack,
   onDisqualify,
+  step2Answer = 0,
 }: {
   onProceed: () => void
   onBack: () => void
   onDisqualify: () => void
+  step2Answer?: number
 }) {
   useEffect(() => { window.scrollTo({ top: 0, behavior: 'instant' }) }, [])
+
+  const s = STATS_BY_ANSWER[step2Answer] ?? STATS_BY_ANSWER[0]
+
+  const stats = [
+    { label: 'Nya undersökningar / månad', sub: 'garanterat', value: s.undersökningar, accent: false },
+    { label: 'Genomsnittlig bokningsprocent', sub: null,         value: '70%',            accent: false },
+    { label: 'Nya patienter / månad',        sub: null,         value: s.patienter,      accent: false },
+    { label: 'Annonseringskostnad',           sub: 'per månad', value: s.annonskostnad,  accent: false },
+    { label: 'Uppskattat patientvärde (LTV)', sub: null,         value: s.patientvärde,  accent: true  },
+  ]
 
   return (
     <main className="w-full min-h-screen flex flex-col">
@@ -55,16 +96,16 @@ export function ClosingStepView({
 
               {/* Rows */}
               <div className="divide-y divide-zinc-700/60">
-                {stats.map((s) => (
-                  <div key={s.label} className="flex items-center justify-between px-5 py-3.5">
+                {stats.map((row) => (
+                  <div key={row.label} className="flex items-center justify-between px-5 py-3.5">
                     <span className="text-sm text-zinc-300">
-                      {s.label}
-                      {s.sub && (
-                        <span className="text-zinc-500 ml-1">({s.sub})</span>
+                      {row.label}
+                      {row.sub && (
+                        <span className="text-zinc-500 ml-1">({row.sub})</span>
                       )}
                     </span>
-                    <span className={`text-base font-bold tabular-nums ${s.accent ? 'text-accent' : 'text-zinc-100'}`}>
-                      {s.value}
+                    <span className={`text-base font-bold tabular-nums ${row.accent ? 'text-accent' : 'text-zinc-100'}`}>
+                      {row.value}
                     </span>
                   </div>
                 ))}

@@ -15,6 +15,12 @@ type ViewState = 'landing' | 'step' | 'disqualified' | 'thankyou' | 'confirm' | 
 export default function LeadcomFunnel() {
   const [view, setView] = useState<ViewState>('landing')
   const [currentStepIndex, setCurrentStepIndex] = useState(1)
+  // Tracks the selected option index (0-based) for each step (keyed by stepIndex)
+  const [answers, setAnswers] = useState<Record<number, number>>({})
+
+  const handleAnswer = (stepIndex: number, optionIndex: number) => {
+    setAnswers(prev => ({ ...prev, [stepIndex]: optionIndex }))
+  }
 
   const handleStartFunnel = () => {
     setCurrentStepIndex(1)
@@ -40,6 +46,7 @@ export default function LeadcomFunnel() {
   const handleRestart = () => {
     setView('landing')
     setCurrentStepIndex(1)
+    setAnswers({})
   }
 
   if (view === 'landing') {
@@ -62,9 +69,28 @@ export default function LeadcomFunnel() {
     return <BookingView onRestart={handleRestart} />
   }
 
+  // Step 2 is at funnelSteps index 1; default to option index 0 if unanswered
+  const step2Answer = answers[1] ?? 0
+
   if (currentStepIndex === funnelSteps.length - 1) {
-    return <ClosingStepView onProceed={handleNext} onBack={handleBack} onDisqualify={() => setView('disqualified')} />
+    return (
+      <ClosingStepView
+        onProceed={handleNext}
+        onBack={handleBack}
+        onDisqualify={() => setView('disqualified')}
+        step2Answer={step2Answer}
+      />
+    )
   }
 
-  return <StepView key={currentStepIndex} stepIndex={currentStepIndex} onNext={handleNext} onBack={handleBack} onDisqualify={() => setView('disqualified')} />
+  return (
+    <StepView
+      key={currentStepIndex}
+      stepIndex={currentStepIndex}
+      onNext={handleNext}
+      onBack={handleBack}
+      onDisqualify={() => setView('disqualified')}
+      onAnswer={handleAnswer}
+    />
+  )
 }
