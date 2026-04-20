@@ -62,23 +62,23 @@ export function ConfirmView({
             <div className="h-1 w-full bg-accent" />
 
             <div className="p-6 md:p-8">
-              <motion.p variants={drop(0.05)} initial="hidden" animate="show"
+              <motion.p variants={drop(0.10)} initial="hidden" animate="show"
                 className="text-[10px] font-semibold tracking-widest text-accent uppercase mb-4">
                 Perfekt — ni passar
               </motion.p>
 
-              <motion.h1 variants={drop(0.12)} initial="hidden" animate="show"
+              <motion.h1 variants={drop(0.24)} initial="hidden" animate="show"
                 className="text-xl md:text-2xl font-bold text-zinc-900 leading-snug mb-3 text-balance">
                 Baserat på era svar kan vi leverera ett förutsägbart flöde av nya patienter
               </motion.h1>
 
-              <motion.p variants={drop(0.19)} initial="hidden" animate="show"
+              <motion.p variants={drop(0.38)} initial="hidden" animate="show"
                 className="text-sm text-zinc-500 leading-relaxed mb-6">
                 Nästa steg: fyll i era kontaktuppgifter så bokar vi in ett kort samtal — utan förpliktelse — för att visa exakt vad vi kan göra för er klinik.
               </motion.p>
 
               {/* Stat pills */}
-              <motion.div variants={drop(0.27)} initial="hidden" animate="show"
+              <motion.div variants={drop(0.54)} initial="hidden" animate="show"
                 className="grid grid-cols-3 gap-3 mb-6">
                 <div className="bg-white border border-zinc-200 rounded-lg p-3 text-center shadow-sm">
                   <p className="text-base font-bold text-zinc-900">20–50</p>
@@ -95,7 +95,7 @@ export function ConfirmView({
               </motion.div>
 
               {/* Primary CTA */}
-              <motion.div variants={drop(0.34)} initial="hidden" animate="show">
+              <motion.div variants={drop(0.68)} initial="hidden" animate="show">
                 <Button
                   onClick={onProceed}
                   size="lg"
@@ -108,7 +108,7 @@ export function ConfirmView({
             </div>
 
             {/* ── Case study (below first CTA) ── */}
-            <motion.div variants={drop(0.42)} initial="hidden" animate="show"
+            <motion.div variants={drop(0.84)} initial="hidden" animate="show"
               className="border-t border-zinc-200 px-6 pt-5 pb-0">
               <CaseStudyPanel
                 imageSrc="/static/images/testimonials/darya-interview.png"
@@ -120,17 +120,17 @@ export function ConfirmView({
 
             {/* ── How it works section ── */}
             <div className="border-t border-zinc-200 px-6 pt-6 pb-5 mt-5">
-              <motion.p variants={drop(0.50)} initial="hidden" animate="show"
+              <motion.p variants={drop(1.00)} initial="hidden" animate="show"
                 className="text-[10px] font-semibold tracking-widest text-zinc-400 uppercase mb-3">
                 Så fungerar det
               </motion.p>
-              <motion.h2 variants={drop(0.56)} initial="hidden" animate="show"
+              <motion.h2 variants={drop(1.14)} initial="hidden" animate="show"
                 className="text-lg md:text-xl font-bold text-zinc-900 leading-snug mb-5">
                 Därför kan vi <em className="not-italic text-accent font-extrabold">garantera</em> resultat
               </motion.h2>
 
               {/* Guarantee box */}
-              <motion.div variants={drop(0.63)} initial="hidden" animate="show"
+              <motion.div variants={drop(1.28)} initial="hidden" animate="show"
                 className="flex gap-3 p-4 rounded-lg bg-emerald-50 border border-emerald-200 mb-5">
                 <ShieldCheck className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
                 <div>
@@ -151,7 +151,7 @@ export function ConfirmView({
                 {features.map((f, i) => (
                   <motion.div
                     key={f.title}
-                    variants={drop(0.70 + i * 0.08)}
+                    variants={drop(1.42 + i * 0.14)}
                     initial="hidden"
                     animate="show"
                     className="bg-white border border-zinc-200 rounded-lg p-4 shadow-sm"
@@ -164,7 +164,7 @@ export function ConfirmView({
               </div>
 
               {/* Secondary CTA */}
-              <motion.div variants={drop(1.02)} initial="hidden" animate="show">
+              <motion.div variants={drop(1.98)} initial="hidden" animate="show">
                 <Button
                   onClick={onProceed}
                   size="lg"
@@ -178,7 +178,7 @@ export function ConfirmView({
           </motion.div>
 
           {/* Restart */}
-          <motion.div variants={drop(1.08)} initial="hidden" animate="show"
+          <motion.div variants={drop(2.12)} initial="hidden" animate="show"
             className="text-center pb-2">
             <button
               onClick={onRestart}
