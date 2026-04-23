@@ -79,7 +79,7 @@ export function ThankYouView({
       // Don't block the user if the webhook fails
     }
 
-    window.location.href = 'https://www.leadcom.no/takk'
+    window.location.href = 'https://www.leadcom.no/tack-se'
   }
 
   const isValid = form.name.trim() && form.email.trim() && form.clinic.trim()
