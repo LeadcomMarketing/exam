@@ -58,7 +58,7 @@ export default function LeadcomFunnel() {
   }
 
   if (view === 'thankyou') {
-    return <ThankYouView onRestart={handleRestart} onSubmit={() => setView('booking')} />
+    return <ThankYouView onRestart={handleRestart} onSubmit={() => setView('booking')} answers={answers} />
   }
 
   if (view === 'confirm') {

@@ -5,6 +5,18 @@ import { ArrowRight, RotateCcw, CheckCircle2 } from 'lucide-react'
 import { Button } from '@/components/shared/ui/button'
 import { Input } from '@/components/shared/ui/input'
 import { LeadcomHeader } from './LeadcomHeader'
+import { funnelSteps } from '@/data/leadcom-funnel-data'
+
+const WEBHOOK_URL = 'https://hook.eu1.make.com/vmgvclgv4zgop4n85aw66aejntv1mplp'
+
+function buildAnswerLabel(stepIndex: number, value: number): string {
+  const step = funnelSteps[stepIndex]
+  if (!step) return String(value)
+  // Step 2 uses a slider — value is the exact number
+  if (step.slider) return `${value} undersökningar / månad`
+  // All other steps — value is the selected option index
+  return step.options[value]?.label ?? String(value)
+}
 
 const expectations = [
   {
@@ -21,15 +33,51 @@ const expectations = [
   },
 ]
 
-export function ThankYouView({ onRestart, onSubmit }: { onRestart: () => void; onSubmit: () => void }) {
+export function ThankYouView({
+  onRestart,
+  onSubmit,
+  answers = {},
+}: {
+  onRestart: () => void
+  onSubmit: () => void
+  answers?: Record<number, number>
+}) {
   const [form, setForm] = useState({ name: '', email: '', clinic: '', website: '' })
   const [submitting, setSubmitting] = useState(false)
 
   useEffect(() => { window.scrollTo({ top: 0, behavior: 'instant' }) }, [])
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setSubmitting(true)
+
+    const payload = {
+      contact: {
+        name:    form.name.trim(),
+        email:   form.email.trim(),
+        clinic:  form.clinic.trim(),
+        website: form.website.trim() || null,
+      },
+      answers: Object.fromEntries(
+        Object.entries(answers).map(([stepIndex, value]) => {
+          const step = funnelSteps[Number(stepIndex)]
+          const key  = `steg_${Number(stepIndex) + 1}_${step?.title.slice(0, 40).replace(/\s+/g, '_').toLowerCase() ?? stepIndex}`
+          return [key, buildAnswerLabel(Number(stepIndex), value)]
+        })
+      ),
+      submitted_at: new Date().toISOString(),
+    }
+
+    try {
+      await fetch(WEBHOOK_URL, {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify(payload),
+      })
+    } catch {
+      // Fire-and-forget — don't block the user if the webhook fails
+    }
+
     onSubmit()
   }
 
