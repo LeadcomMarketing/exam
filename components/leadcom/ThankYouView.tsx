@@ -75,10 +75,10 @@ export function ThankYouView({
         body:    JSON.stringify(payload),
       })
     } catch {
-      // Fire-and-forget — don't block the user if the webhook fails
+      // Don't block the user if the webhook fails
     }
 
-    onSubmit()
+    window.location.href = 'https://www.leadcom.no/takk'
   }
 
   const isValid = form.name.trim() && form.email.trim() && form.clinic.trim()
