@@ -42,7 +42,7 @@ export function ThankYouView({
   onSubmit: () => void
   answers?: Record<number, number>
 }) {
-  const [form, setForm] = useState({ name: '', email: '', clinic: '', website: '' })
+  const [form, setForm] = useState({ name: '', email: '', phone: '', clinic: '', website: '' })
   const [submitting, setSubmitting] = useState(false)
 
   useEffect(() => { window.scrollTo({ top: 0, behavior: 'instant' }) }, [])
@@ -55,6 +55,7 @@ export function ThankYouView({
       contact: {
         name:    form.name.trim(),
         email:   form.email.trim(),
+        phone:   form.phone.trim() || null,
         clinic:  form.clinic.trim(),
         website: form.website.trim() || null,
       },
@@ -136,6 +137,13 @@ export function ThankYouView({
                   value={form.email}
                   onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
                   required
+                  className="h-12 bg-white border-zinc-300 text-zinc-900 placeholder:text-zinc-400 focus-visible:ring-accent/50"
+                />
+                <Input
+                  type="tel"
+                  placeholder="Telefonnummer"
+                  value={form.phone}
+                  onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
                   className="h-12 bg-white border-zinc-300 text-zinc-900 placeholder:text-zinc-400 focus-visible:ring-accent/50"
                 />
                 <Input
