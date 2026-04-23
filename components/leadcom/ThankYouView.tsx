@@ -155,7 +155,7 @@ export function ThankYouView({
                 />
                 <div>
                   <Input
-                    type="url"
+                    type="text"
                     placeholder="Klinikens webbplats (valfritt)"
                     value={form.website}
                     onChange={e => setForm(f => ({ ...f, website: e.target.value }))}
