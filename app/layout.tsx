@@ -1,5 +1,4 @@
 import { Poppins, Caveat } from 'next/font/google';
-import Script from 'next/script';
 import { siteConfig } from '@/data/config/site.settings';
 import { ThemeProviders } from './theme-providers';
 import { Metadata } from 'next';
@@ -130,11 +129,9 @@ export default function RootLayout({
           content="#000"
         />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-      </head>
 
-      <body className="flex flex-col bg-white text-black antialiased dark:bg-gray-950 dark:text-white min-h-screen">
         {/* Meta Pixel */}
-        <Script id="meta-pixel" strategy="afterInteractive">{`
+        <script dangerouslySetInnerHTML={{ __html: `
           !function(f,b,e,v,n,t,s)
           {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
           n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -145,14 +142,11 @@ export default function RootLayout({
           'https://connect.facebook.net/en_US/fbevents.js');
           fbq('init','634358591386366');
           fbq('track','PageView');
-        `}</Script>
-        <noscript>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img height="1" width="1" style={{ display: 'none' }}
-            src="https://www.facebook.com/tr?id=634358591386366&ev=PageView&noscript=1"
-            alt=""
-          />
-        </noscript>
+        `}} />
+        <noscript dangerouslySetInnerHTML={{ __html: `<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=634358591386366&ev=PageView&noscript=1"/>` }} />
+      </head>
+
+      <body className="flex flex-col bg-white text-black antialiased dark:bg-gray-950 dark:text-white min-h-screen">
         <ThemeProviders>
           <AnalyticsWrapper />
 
